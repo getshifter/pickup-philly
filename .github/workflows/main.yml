@@ -1,0 +1,42 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Start WordPress
+      id: start
+      uses: getshifter/actions-start@v1
+      env:
+        SHIFTER_USER: ${{ secrets.SHIFTER_USER }}
+        SHIFTER_PASS: ${{ secrets.SHIFTER_PASS }}
+        SHIFTER_SITE_ID: ${{ secrets.SHIFTER_SITE_ID }}
+    - name: Replace Shifter URL
+      env:
+        SHIFTER_APP_URL: ${{ steps.start.outputs.shifter_app_url }}
+      run:
+        sed "s@REPLACE_SHIFTER_URL@$SHIFTER_APP_URL@" gatsby-config.js -i
+    - name: setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: install
+      run: npm install
+    - name: build
+      run: npm run build
+    - name: Deploy to netlify
+      uses: netlify/actions/cli@master
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      with:
+        args: deploy --dir=public --prod
+    - name: Stop WordPress
+      uses: getshifter/actions-stop@v2
+      env:
+        SHIFTER_USER: ${{ secrets.SHIFTER_USER }}
+        SHIFTER_PASS: ${{ secrets.SHIFTER_PASS }}
+        SHIFTER_SITE_ID: ${{ secrets.SHIFTER_SITE_ID }}
