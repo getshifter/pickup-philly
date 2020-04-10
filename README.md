@@ -2,6 +2,10 @@
 
 A one day build to support the local business community affected by the COVID-19 outbreak. It's a business directory built on the JAMstack.
 
+## Micro-blog about the project
+
+https://twitter.com/emaildano/status/1248638563769614338?s=20
+
 ## Helpful Links
 
 ### Blog Post
