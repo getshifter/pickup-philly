@@ -1,64 +1,77 @@
-const activeEnv =
-  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || `development`
-
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
 
 const config = {
   wordPressUrl:
-    activeEnv === "production"
-      ? `REPLACE_SHIFTER_URL/`
-      : process.env.GATSBY_WORDPRESS_URL,
+    activeEnv === 'production'
+      ? 'https://api.develop.getshifter.io/'
+      : 'https://api.develop.getshifter.io/',
   wordPressGraphQlUrl:
-    activeEnv === "production"
-      ? `REPLACE_SHIFTER_URL/graphql/`
-      : process.env.GATSBY_WORDPRESS_GRAPHQL_URL,
-}
+    activeEnv === 'production'
+      ? 'https://api.develop.getshifter.io/graphql/'
+      : 'https://api.develop.getshifter.io/graphql/',
+};
 
-module.exports = { config }
+module.exports = { config };
 
 module.exports = {
   siteMetadata: {
-    title: `Pickup Philly`,
-    description: `A business directory built on the JAMstack.`,
-    author: `@pickupphilly`,
+    title: 'Shifter',
+    description: 'The static site generator for WordPress.',
+    author: '@getshifter',
+    siteUrl: 'https://www.pickupphilly.com',
     wordPressUrl: config.wordPressUrl,
     wordPressGraphQlUrl: config.wordPressGraphQlUrl,
+    twitterImage: '/twitter-image.png',
+    ogImage: '/og-image.png',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-graphql',
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-graphql`,
-      options: {
-        typeName: `WPGraphQL`,
-        fieldName: `wpgraphql`,
+        typeName: 'WPGraphQL',
+        fieldName: 'wpgraphql',
         url: config.wordPressGraphQlUrl,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-plugin-sass',
+    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#f80759`,
-        theme_color: `#f80759`,
-        display: `minimal-ui`,
-        icon: `src/images/shifter-icon.png`, // This path is relative to the root of the site.
+        name: 'images',
+        path: `${__dirname}/src/images`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        useMozJpeg: false,
+        stripMetadata: true,
+        cropFocus: 'CENTER',
+        toFormat: 'WEBP',
+        pngCompressionSpeed: 10,
+        defaultQuality: 90,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'shifter-website',
+        short_name: 'shifter',
+        start_url: '/',
+        background_color: '#f0f2f5',
+        theme_color: '#001529',
+        display: 'minimal-ui',
+        icon: 'src/images/shifter-icon.png',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    'gatsby-plugin-sitemap',
   ],
-}
+};
