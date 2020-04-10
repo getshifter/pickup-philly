@@ -3,12 +3,12 @@ const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'deve
 const config = {
   wordPressUrl:
     activeEnv === 'production'
-      ? 'https://api.develop.getshifter.io/'
-      : 'https://api.develop.getshifter.io/',
+      ? 'https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:24326/'
+      : 'https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:24326/',
   wordPressGraphQlUrl:
     activeEnv === 'production'
-      ? 'https://api.develop.getshifter.io/graphql/'
-      : 'https://api.develop.getshifter.io/graphql/',
+      ? 'https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:24326/graphql/'
+      : 'https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:24326/graphql/',
 };
 
 module.exports = { config };
