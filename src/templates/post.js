@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import { graphql } from "gatsby"
 import { Row, Col } from "reactstrap"
-import SiteLayout from "../components/SiteLayout"
+import Layout from "../components/Layout"
 import PostEntryMeta from "../components/PostEntryMeta"
 import Seo from "../components/Seo"
 
@@ -31,7 +31,7 @@ const Post = props => {
   } = props
   const { title, content } = post
   return (
-    <SiteLayout location={location}>
+    <Layout location={location}>
       <Seo title={`${post.title}`} />
       <Row>
         <Col>
@@ -43,7 +43,7 @@ const Post = props => {
           </Row>
         </Col>
       </Row>
-    </SiteLayout>
+    </Layout>
   )
 }
 

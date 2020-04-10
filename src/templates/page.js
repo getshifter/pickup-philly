@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Row, Col } from "reactstrap"
-import SiteLayout from "../components/SiteLayout"
+import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 
 const Page = props => {
@@ -13,7 +13,7 @@ const Page = props => {
   } = props
   const { title, content } = page
   return (
-    <SiteLayout location={location}>
+    <Layout location={location}>
       <Seo title={`${page.title}`} />
       <Row>
         <Col>
@@ -25,7 +25,7 @@ const Page = props => {
           </Row>
         </Col>
       </Row>
-    </SiteLayout>
+    </Layout>
   )
 }
 

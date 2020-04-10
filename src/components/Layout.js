@@ -2,9 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import Header from "./SiteHeader"
 import { Container, Row, Col } from "reactstrap"
-import "./style.css"
 
-const SiteLayout = ({ children, location }) => (
+const Layout = ({ children, location }) => (
   <div>
     <Header location={location} />
     <Row>
@@ -14,8 +13,8 @@ const SiteLayout = ({ children, location }) => (
   </div>
 )
 
-SiteLayout.propTypes = {
+Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default SiteLayout
+export default Layout
