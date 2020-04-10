@@ -7,13 +7,16 @@ const LocationCard = props => {
     return null
   }
 
-  const { title } = props.data
+  const { title, acf_location } = props.data
+  const { fulfillmentOptions, website } = acf_location
+
+  console.log(fulfillmentOptions)
 
   return (
     <section>
       <Card>
-        <CardHeader dangerouslySetInnerHTML={{__html: title}} />
-        <CardBody>body</CardBody>
+        <CardHeader dangerouslySetInnerHTML={{ __html: title }} />
+        <CardBody>{/* <a href={website}>{website}</a> */}</CardBody>
         <CardFooter>Footer</CardFooter>
       </Card>
     </section>

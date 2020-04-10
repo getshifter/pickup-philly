@@ -15,6 +15,7 @@ const Locations = () => {
               slug
               acf_location {
                 fulfillmentOptions
+                website
               }
             }
           }
