@@ -1,4 +1,4 @@
-# Philly Pickup
+# Pickup Philly
 
 A one day build to support the local business community affected by the COVID-19 outbreak. It's a business directory built on the JAMstack.
 

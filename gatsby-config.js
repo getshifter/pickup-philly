@@ -20,7 +20,7 @@ module.exports = { config }
 
 module.exports = {
   siteMetadata: {
-    title: `Philly Pickup`,
+    title: `Pickup Philly`,
     description: `A business directory built on the JAMstack.`,
     author: `@pickupphilly`,
     wordPressUrl: config.wordPressUrl,
