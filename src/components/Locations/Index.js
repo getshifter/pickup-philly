@@ -15,7 +15,30 @@ const Locations = () => {
               slug
               acf_location {
                 fulfillmentOptions
+                orderingOptions
                 website
+                phone
+                availabilityNotes
+                address {
+                  city
+                  country
+                  countryShort
+                  latitude
+                  longitude
+                  placeId
+                  postCode
+                  state
+                  stateShort
+                  streetAddress
+                  streetName
+                  streetNumber
+                  zoom
+                }
+              }
+              categories: graphql_all_location_categories {
+                nodes {
+                  name
+                }
               }
             }
           }
