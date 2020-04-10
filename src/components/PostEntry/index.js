@@ -1,13 +1,12 @@
 import React, { Fragment } from "react"
 import { Link, graphql } from "gatsby"
-import { Row, Col, Divider } from "antd"
 import PostEntryMeta from "../PostEntryMeta"
 import config from '../../../gatsby-config'
 
 const PostEntry = ({ post }) => {
   return (
     <Fragment>
-      <Row type="flex" justify="space-around" gutter={16}>
+      {/* <Row type="flex" justify="space-around" gutter={16}>
         <Col xs={24} md={4}>
           <PostEntryMeta post={post} />
         </Col>
@@ -22,7 +21,7 @@ const PostEntry = ({ post }) => {
           />
         </Col>
       </Row>
-      <Divider />
+      <Divider /> */}
     </Fragment>
   )
 }

@@ -1,10 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Row, Col, Divider } from "antd"
+import { Row, Col } from "reactstrap"
 import SiteLayout from "../components/SiteLayout"
-import CategoriesWidget from "../components/CategoriesWidget"
-import RecentCommentsWidget from "../components/RecentCommentsWidget"
-import RecentPostsWidget from "../components/RecentPostsWidget"
 import Seo from "../components/Seo"
 
 const Page = props => {
@@ -18,20 +15,14 @@ const Page = props => {
   return (
     <SiteLayout location={location}>
       <Seo title={`${page.title}`} />
-      <Row type="flex" gutter={24}>
-        <Col xs={24} md={16}>
+      <Row>
+        <Col>
           <h1>{title}</h1>
-          <Divider />
-          <Row type="flex" justify="space-around" gutter={24}>
-            <Col xs={24}>
+          <Row>
+            <Col>
               <div dangerouslySetInnerHTML={{ __html: content }} />
             </Col>
           </Row>
-        </Col>
-        <Col xs={24} md={8}>
-          <RecentPostsWidget />
-          <CategoriesWidget />
-          <RecentCommentsWidget />
         </Col>
       </Row>
     </SiteLayout>

@@ -1,10 +1,7 @@
 import React, { Fragment } from "react"
 import { graphql } from "gatsby"
-import { Row, Col, Divider, Tag } from "antd"
+import { Row, Col } from "reactstrap"
 import SiteLayout from "../components/SiteLayout"
-import CategoriesWidget from "../components/CategoriesWidget"
-import RecentCommentsWidget from "../components/RecentCommentsWidget"
-import RecentPostsWidget from "../components/RecentPostsWidget"
 import PostEntryMeta from "../components/PostEntryMeta"
 import Seo from "../components/Seo"
 
@@ -13,14 +10,13 @@ const renderTermNodes = (nodes, title) => (
     {title}
     {` `}
     {nodes.map(term => (
-      <Tag>{term.name}</Tag>
+      term.name
     ))}
   </div>
 )
 
 const renderTerms = (categoryNodes = [], tagNodes = []) => (
   <Fragment>
-    <Divider />
     {categoryNodes ? renderTermNodes(categoryNodes, `Categories: `) : null}
     {tagNodes && tagNodes.length ? renderTermNodes(tagNodes, `Tags: `) : null }
   </Fragment>
@@ -37,26 +33,14 @@ const Post = props => {
   return (
     <SiteLayout location={location}>
       <Seo title={`${post.title}`} />
-      <Row type="flex" gutter={24}>
-        <Col xs={24} md={16}>
+      <Row>
+        <Col>
           <h1>{title}</h1>
-          <Divider />
-          <Row type="flex" justify="space-around" gutter={24}>
-            <Col xs={24} md={6}>
+          <Row>
+            <Col>
               <PostEntryMeta post={post} />
             </Col>
-            <Col xs={24} md={18}>
-              <div dangerouslySetInnerHTML={{ __html: content }} />
-              {post.categories.nodes.length || post.tags.nodes.length
-                ? renderTerms(post.categories.nodes, post.tags.nodes)
-                : null}
-            </Col>
           </Row>
-        </Col>
-        <Col xs={24} md={8}>
-          <RecentPostsWidget />
-          <CategoriesWidget />
-          <RecentCommentsWidget />
         </Col>
       </Row>
     </SiteLayout>
