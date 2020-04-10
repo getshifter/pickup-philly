@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Card, CardBody } from "reactstrap"
 
 const LocationCard = props => {
   if (props.data === null) {
@@ -9,11 +10,11 @@ const LocationCard = props => {
   const { title } = props.data
 
   return (
-    <>
-      <div>
-        <h4 className="display-4 mb-0">{title}</h4>
-      </div>
-    </>
+    <section>
+      <Card>
+        <CardBody>{title}</CardBody>
+      </Card>
+    </section>
   )
 }
 
