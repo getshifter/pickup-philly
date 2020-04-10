@@ -1,6 +1,6 @@
-# shifter-gatsby-github-actions
+# Philly Pickup
 
-Example Gatsby site using WordPress and WPGraphQL hosted on Shifter, builds using GitHub Actions, and deploys to Netlify.
+A one day build to support the local business community affected by the COVID-19 outbreak. It's a business directory built on the JAMstack.
 
 ## Helpful Links
 
