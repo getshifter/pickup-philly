@@ -15,9 +15,9 @@ module.exports = { config };
 
 module.exports = {
   siteMetadata: {
-    title: 'Shifter',
-    description: 'The static site generator for WordPress.',
-    author: '@getshifter',
+    title: 'Pickup Philly',
+    description: '',
+    author: '@pickupphilly',
     siteUrl: 'https://www.pickupphilly.com',
     wordPressUrl: config.wordPressUrl,
     wordPressGraphQlUrl: config.wordPressGraphQlUrl,

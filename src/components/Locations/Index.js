@@ -8,11 +8,14 @@ const Locations = () => {
     graphql`
       query LOCATIONS {
         wpgraphql {
-          showcase: graphql_all_locations(first: 100) {
+          locations: graphql_all_locations(first: 100) {
             nodes {
               id
               title
               slug
+              acf_location {
+                fulfillmentOptions
+              }
             }
           }
         }
@@ -20,12 +23,12 @@ const Locations = () => {
     `
   )
 
-  const studies = data.wpgraphql.showcase.nodes
+  const locations = data.wpgraphql.locations.nodes
 
   return (
     <>
-      {studies.map(post => (
-        <LocationCard data={post} />
+      {locations.map(location => (
+        <LocationCard data={location} />
       ))}
     </>
   )
