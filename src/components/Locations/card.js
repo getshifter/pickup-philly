@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Url from "url-parse"
 import PhoneNumber from "awesome-phonenumber"
 import {
   Card,
@@ -18,6 +17,7 @@ import { renderPayment } from "./payment"
 import { renderMetaTitle } from "./title"
 import { renderPhone } from "./phone"
 import { renderHours } from "./hours"
+import { renderWebsite } from "./website"
 
 const LocationCard = props => {
   if (props.data === null) {
@@ -35,8 +35,6 @@ const LocationCard = props => {
     availabilityNotes,
   } = acf_location
   const id = `id_` + databaseId
-  const url = Url(website)
-  const urlParsed = url.host ? url.host : null
   const telephone = phone ? new PhoneNumber(phone, "US") : null
 
   return (
@@ -47,10 +45,8 @@ const LocationCard = props => {
             <h2 dangerouslySetInnerHTML={{ __html: title }} />
             <div className="mb-3">{renderCategories(categories.nodes)}</div>
             <Row className="d-flex justify-content-between mb-4">
-              <Col>
-                <a href={website}>{urlParsed}</a>
-              </Col>
-              <Col>{renderPhone(telephone)}</Col>
+              {renderWebsite(website)}
+              {renderPhone(telephone)}
             </Row>
             <Row>
               <Col>
