@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
+import { NavLink, Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
 
 const InfoModal = props => {
   const { buttonLabel, className } = props
@@ -10,9 +10,9 @@ const InfoModal = props => {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle}>
+      <NavLink color="primary" onClick={toggle}>
         {buttonLabel}
-      </Button>
+      </NavLink>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
