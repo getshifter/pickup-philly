@@ -1,9 +1,14 @@
 import React from "react"
 import { UncontrolledTooltip } from "reactstrap"
-import { Phone, Globe, ChevronDown, Heart } from "@styled-icons/feather"
+import {
+  Phone,
+  Globe,
+  ChevronDown,
+  Heart,
+  Smartphone,
+} from "@styled-icons/feather"
 
 export const renderIcon = icon => {
-  console.log(icon)
   switch (icon) {
     case "online":
       icon = (
@@ -37,6 +42,15 @@ export const renderIcon = icon => {
           <UncontrolledTooltip target={icon}>
             Order by Phone
           </UncontrolledTooltip>
+        </>
+      )
+      break
+
+    case "app":
+      icon = (
+        <>
+          <Smartphone size="1rem" id={icon} />
+          <UncontrolledTooltip target={icon}>Order by App</UncontrolledTooltip>
         </>
       )
       break
