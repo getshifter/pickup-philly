@@ -19,6 +19,7 @@ const Locations = () => {
                 website
                 phone
                 availabilityNotes
+                hours
                 address {
                   city
                   country

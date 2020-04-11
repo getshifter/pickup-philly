@@ -1,4 +1,6 @@
 $gray-100: #efefef !default;
+$gray-800: #343a40 !default;
+$dark: $gray-800 !default;
 $light: $gray-100 !default;
 $green: #00a18a !default;
 $primary: $green !default;
@@ -8,3 +10,35 @@ $navbar-light-active-color: $green !default;
 $navbar-light-color: $green !default;
 $navbar-light-brand-color: $navbar-light-active-color !default;
 $navbar-light-brand-hover-color: $navbar-light-active-color !default;
+
+$font-weight-lighter: lighter !default;
+$font-weight-light: 200 !default;
+$font-weight-normal: 300 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
+
+$font-weight-base: $font-weight-normal !default;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg: $light !default;
+
+// Badges
+
+$badge-font-size: 0.75em !default;
+$badge-font-weight: $font-weight-normal !default;
+$badge-padding-y: 0.75em !default;
+$badge-padding-x: 0.5em !default;
+
+.badge {
+  background: transparent !important;
+  border: 1px solid $dark;
+  color: $dark !important;
+}
+
+// Cards
+
+$card-bg: $light !default;
+$card-cap-bg: $light !default;
