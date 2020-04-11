@@ -1,77 +1,78 @@
-const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
 
 const config = {
   wordPressUrl:
-    activeEnv === 'production'
-      ? 'https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:37221/'
-      : 'https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:37221/',
+    activeEnv === "production"
+      ? "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:46638/"
+      : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:46638/",
   wordPressGraphQlUrl:
-    activeEnv === 'production'
-      ? 'https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:37221/graphql/'
-      : 'https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:37221/graphql/',
-};
+    activeEnv === "production"
+      ? "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:46638/graphql/"
+      : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:46638/graphql/",
+}
 
-module.exports = { config };
+module.exports = { config }
 
 module.exports = {
   siteMetadata: {
-    title: 'Pickup Philly',
-    description: '',
-    author: '@pickupphilly',
-    siteUrl: 'https://www.pickupphilly.com',
+    title: "Pickup Philly",
+    description: "",
+    author: "@pickupphilly",
+    siteUrl: "https://www.pickupphilly.com",
     wordPressUrl: config.wordPressUrl,
     wordPressGraphQlUrl: config.wordPressGraphQlUrl,
-    twitterImage: '/twitter-image.png',
-    ogImage: '/og-image.png',
+    twitterImage: "/twitter-image.png",
+    ogImage: "/og-image.png",
   },
   plugins: [
     {
-      resolve: 'gatsby-source-graphql',
+      resolve: "gatsby-source-graphql",
       options: {
-        typeName: 'WPGraphQL',
-        fieldName: 'wpgraphql',
+        typeName: "WPGraphQL",
+        fieldName: "wpgraphql",
         url: config.wordPressGraphQlUrl,
       },
     },
-    'gatsby-plugin-sass',
-    'gatsby-plugin-react-helmet',
+    "gatsby-plugin-sass",
+    "gatsby-plugin-react-helmet",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'images',
+        name: "images",
         path: `${__dirname}/src/images`,
       },
     },
-    'gatsby-transformer-sharp',
+    "gatsby-transformer-sharp",
     {
-      resolve: 'gatsby-plugin-sharp',
+      resolve: "gatsby-plugin-sharp",
       options: {
         useMozJpeg: false,
         stripMetadata: true,
-        cropFocus: 'CENTER',
-        toFormat: 'WEBP',
+        cropFocus: "CENTER",
+        toFormat: "WEBP",
         pngCompressionSpeed: 10,
         defaultQuality: 90,
       },
     },
+    // {
+    //   resolve: "gatsby-plugin-manifest",
+    //   options: {
+    //     name: "Pickup Philly",
+    //     short_name: "Pickup Philly",
+    //     start_url: "/",
+    //     background_color: "#f0f2f5",
+    //     theme_color: "#001529",
+    //     display: "minimal-ui",
+    //     icon: "src/images/icon.png",
+    //   },
+    // },
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
-        name: 'Pickup Philly',
-        short_name: 'Pickup Philly',
-        start_url: '/',
-        background_color: '#f0f2f5',
-        theme_color: '#001529',
-        display: 'minimal-ui',
-        icon: 'src/images/icon.png',
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        policy: [{ userAgent: '*', allow: '/' }],
-      },
-    },
-    'gatsby-plugin-sitemap',
+    "gatsby-plugin-sitemap",
   ],
-};
+}
