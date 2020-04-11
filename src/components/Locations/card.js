@@ -12,7 +12,8 @@ import {
   UncontrolledTooltip,
 } from "reactstrap"
 import { renderCategories } from "./categories"
-import { renderIcon } from './icon'
+import { renderIcon } from "./icon"
+import { renderOrdering } from "./ordering"
 
 const LocationCard = props => {
   if (props.data === null) {
@@ -35,19 +36,6 @@ const LocationCard = props => {
   const telephone = phone ? new PhoneNumber(phone, "US") : null
 
   console.log(acf_location)
-
-  const renderOrderingNodes = (nodes, title) => (
-    <div>
-      Order by:
-      {nodes.map(option => (
-        <span className="ml-2 text-green">{renderIcon(option)}</span>
-      ))}
-    </div>
-  )
-
-  const renderOrdering = (orderingNodes = []) => (
-    <>{orderingNodes ? renderOrderingNodes(orderingNodes) : null}</>
-  )
 
   const renderFulfillmentNodes = (nodes, title) => (
     <div>
@@ -112,7 +100,7 @@ const LocationCard = props => {
           </div>
           <div className="text-right border-top">
             <Button color="link" id={id}>
-              More Info {renderIcon('chevron-down')}
+              More Info {renderIcon("chevron-down")}
             </Button>
           </div>
           <UncontrolledCollapse toggler={`${id}`}>
@@ -144,7 +132,7 @@ const LocationCard = props => {
               <Row className="mb-4">
                 <Col>
                   <section>
-                    {renderIcon('heart')}{" "}
+                    {renderIcon("heart")}{" "}
                     {renderMetaTitle("Employee Relief Fund")}
                     <div
                       dangerouslySetInnerHTML={{ __html: availabilityNotes }}
