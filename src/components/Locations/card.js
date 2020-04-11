@@ -23,8 +23,10 @@ const LocationCard = props => {
   const {
     fulfillmentOptions,
     orderingOptions,
+    paymentOptions,
     website,
     hours,
+    phone,
     availabilityNotes,
   } = acf_location
   const url = Url(website)
@@ -104,6 +106,21 @@ const LocationCard = props => {
     <>{categoryNodes ? renderCategoryNodes(categoryNodes) : null}</>
   )
 
+  const renderPaymentNodes = (nodes, title) => (
+    <div>
+      {nodes.map(option => (
+        <span>
+          {option}
+          {`, `}
+        </span>
+      ))}
+    </div>
+  )
+
+  const renderPayment = (paymentNodes = []) => (
+    <>{paymentNodes ? renderPaymentNodes(paymentNodes) : null}</>
+  )
+
   const renderMetaTitle = (title = "") =>
     title ? <p className="small font-weight-bold">{title}</p> : null
 
@@ -113,15 +130,17 @@ const LocationCard = props => {
         <CardBody>
           <h2 className="h5" dangerouslySetInnerHTML={{ __html: title }} />
           <div className="mb-3">{renderTerms(categories.nodes)}</div>
-          <div className="d-flex justify-content-between mb-4">
-            <a href={website}>{urlParsed}</a>
-            <div>{renderOrdering(orderingOptions)}</div>
-          </div>
+          <Row className="d-flex justify-content-between mb-4">
+            <Col>
+              <a href={website}>{urlParsed}</a>
+            </Col>
+            <Col>{renderOrdering(orderingOptions)}</Col>
+          </Row>
           <Row className="mb-4">
             <Col>
               <section>
                 {renderMetaTitle("Payment")}
-                <div>{renderFulfillment(fulfillmentOptions)}</div>
+                <div>{renderPayment(paymentOptions)}</div>
               </section>
             </Col>
             <Col>

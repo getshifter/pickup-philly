@@ -16,6 +16,7 @@ const Locations = () => {
               acf_location {
                 fulfillmentOptions
                 orderingOptions
+                paymentOptions
                 website
                 phone
                 availabilityNotes

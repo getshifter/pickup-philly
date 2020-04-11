@@ -57,13 +57,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'shifter-website',
-        short_name: 'shifter',
+        name: 'Pickup Philly',
+        short_name: 'Pickup Philly',
         start_url: '/',
         background_color: '#f0f2f5',
         theme_color: '#001529',
         display: 'minimal-ui',
-        icon: 'src/images/shifter-icon.png',
+        icon: 'src/images/icon.png',
       },
     },
     {
