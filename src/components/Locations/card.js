@@ -13,7 +13,7 @@ import {
   Row,
   UncontrolledTooltip,
 } from "reactstrap"
-import { Phone, Globe, ChevronDown } from "@styled-icons/feather"
+import { Phone, Globe, ChevronDown, Heart } from "@styled-icons/feather"
 
 const LocationCard = props => {
   if (props.data === null) {
@@ -162,10 +162,18 @@ const LocationCard = props => {
               <Row className="mb-4">
                 <Col>
                   <section>
+                    {renderMetaTitle("Payment")}
+                    <div>{renderPayment(paymentOptions)}</div>
+                  </section>
+                </Col>
+                <Col>
+                  <section>
                     {renderMetaTitle("Hours")}
                     <div dangerouslySetInnerHTML={{ __html: hours }} />
                   </section>
                 </Col>
+              </Row>
+              <Row className="mb-4">
                 <Col>
                   <section>
                     {renderMetaTitle("Additional Info")}
@@ -178,14 +186,7 @@ const LocationCard = props => {
               <Row className="mb-4">
                 <Col>
                   <section>
-                    {renderMetaTitle("Payment")}
-                    <div>{renderPayment(paymentOptions)}</div>
-                  </section>
-                </Col>
-              </Row>
-              <Row className="mb-4">
-                <Col>
-                  <section>
+                    <Heart size="1rem" />{" "}
                     {renderMetaTitle("Employee Relief Fund")}
                     <div
                       dangerouslySetInnerHTML={{ __html: availabilityNotes }}
