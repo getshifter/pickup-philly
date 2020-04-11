@@ -145,7 +145,7 @@ const LocationCard = props => {
             <Col>
               <section>
                 {renderMetaTitle("Fulfillment")}
-                <div>{renderFulfillment(fulfillmentOptions)}</div>
+                <div className="font-weight-bold">{renderFulfillment(fulfillmentOptions)}</div>
               </section>
             </Col>
             <Col>{renderOrdering(orderingOptions)}</Col>
@@ -160,7 +160,7 @@ const LocationCard = props => {
             <div className="p-4">
               <Row className="mb-4">
                 <Col>
-                  <section>
+                  <section className="font-weight-bold">
                     {renderMetaTitle("Payment")}
                     <div>{renderPayment(paymentOptions)}</div>
                   </section>
@@ -168,7 +168,7 @@ const LocationCard = props => {
                 <Col>
                   <section>
                     {renderMetaTitle("Hours")}
-                    <div dangerouslySetInnerHTML={{ __html: hours }} />
+                    <div className="font-weight-bold" dangerouslySetInnerHTML={{ __html: hours }} />
                   </section>
                 </Col>
               </Row>
