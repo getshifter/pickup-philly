@@ -141,7 +141,7 @@ const LocationCard = props => {
               <a href={telephone.getNumber()}>{telephone.getNumber()}</a>
             </Col>
           </Row>
-          <Row className="mb-4">
+          <Row>
             <Col>
               <section>
                 {renderMetaTitle("Fulfillment")}
