@@ -1,5 +1,5 @@
 $gray-100: #efefef !default;
-$gray-300: #d7d7d7 !default;
+$gray-300: #CECECE !default;
 $gray-800: #272515 !default;
 $dark: $gray-800 !default;
 $light: $gray-100 !default;
@@ -30,8 +30,8 @@ $body-bg: $light !default;
 
 $badge-font-size: 0.75em !default;
 $badge-font-weight: $font-weight-normal !default;
-$badge-padding-y: 0.75em !default;
-$badge-padding-x: 0.5em !default;
+$badge-padding-y: 0.5em !default;
+$badge-padding-x: 0.75em !default;
 
 .badge {
   background: transparent !important;

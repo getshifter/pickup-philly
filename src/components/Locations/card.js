@@ -38,14 +38,12 @@ const LocationCard = props => {
   const urlParsed = url.host ? url.host : null
   const telephone = phone ? new PhoneNumber(phone, "US") : null
 
-  console.log(acf_location)
-
   return (
     <section>
       <Card>
         <CardBody className="p-0">
           <div className="p-4">
-            <h2 className="h5" dangerouslySetInnerHTML={{ __html: title }} />
+            <h2 dangerouslySetInnerHTML={{ __html: title }} />
             <div className="mb-3">{renderCategories(categories.nodes)}</div>
             <Row className="d-flex justify-content-between mb-4">
               <Col>
@@ -53,11 +51,11 @@ const LocationCard = props => {
               </Col>
               <Col>{renderPhone(telephone)}</Col>
             </Row>
-            <Row className="mb-4">
+            <Row>
               <Col>
                 <section>
                   {renderMetaTitle("Fulfillment")}
-                  <div>{renderFulfillment(fulfillmentOptions)}</div>
+                  <div className="font-weight-bold">{renderFulfillment(fulfillmentOptions)}</div>
                 </section>
               </Col>
               <Col>{renderOrdering(orderingOptions)}</Col>
@@ -72,7 +70,7 @@ const LocationCard = props => {
             <div className="p-4">
               <Row className="mb-4">
                 <Col>
-                  <section>
+                <section className="font-weight-bold">
                     {renderMetaTitle("Payment")}
                     <div>{renderPayment(paymentOptions)}</div>
                   </section>
@@ -80,7 +78,7 @@ const LocationCard = props => {
                 <Col>
                   <section>
                     {renderMetaTitle("Hours")}
-                    <div dangerouslySetInnerHTML={{ __html: hours }} />
+                    <div className="font-weight-bold" dangerouslySetInnerHTML={{ __html: hours }} />
                   </section>
                 </Col>
               </Row>
