@@ -40,11 +40,11 @@ const LocationCard = props => {
 
   return (
     <section>
-      <Card>
+      <Card className="mb-3">
         <CardBody className="p-0">
           <div className="p-4">
-            <h2 dangerouslySetInnerHTML={{ __html: title }} />
-            <div className="mb-3">{renderCategories(categories.nodes)}</div>
+            <h2 className="display-3" dangerouslySetInnerHTML={{ __html: title }} />
+            <div className="mt-3 mb-4">{renderCategories(categories.nodes)}</div>
             <Row className="d-flex justify-content-between mb-4">
               {renderWebsite(website)}
               {renderPhone(telephone)}
