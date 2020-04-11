@@ -1,17 +1,24 @@
-import { Link, StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
 import {
   Navbar,
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   Container,
   Col,
   Row,
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
 } from "reactstrap"
 // import SiteMenu from "../SiteMenu"
+const [modal, setModal] = useState(false);
+
+const toggle = () => setModal(!modal);
 
 const Index = ({ location }) => (
   <StaticQuery
@@ -33,9 +40,18 @@ const Index = ({ location }) => (
                 <NavbarBrand href="/">Pickup Philly</NavbarBrand>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
-                    <NavLink as={Link} to="/about/">
+                    <Button outline color="primary" onClick={toggle}>
                       About
-                    </NavLink>
+                      </Button>
+                    <Modal isOpen={modal} toggle={toggle}>
+                      <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+                      <ModalBody>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </ModalBody>
+                      <ModalFooter>
+                        Twitter
+                      </ModalFooter>
+                    </Modal>
                   </NavItem>
                 </Nav>
               </Navbar>
