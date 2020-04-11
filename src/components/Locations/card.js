@@ -5,7 +5,6 @@ import PhoneNumber from "awesome-phonenumber"
 import {
   Card,
   CardBody,
-  CardFooter,
   Badge,
   UncontrolledCollapse,
   Button,
@@ -20,7 +19,7 @@ const LocationCard = props => {
     return null
   }
 
-  const { title, acf_location, categories, slug } = props.data
+  const { title, databaseId, acf_location, categories } = props.data
   const {
     fulfillmentOptions,
     orderingOptions,
@@ -30,9 +29,10 @@ const LocationCard = props => {
     phone,
     availabilityNotes,
   } = acf_location
+  const id = `id_` + databaseId
   const url = Url(website)
   const urlParsed = url.host ? url.host : null
-  const telephone = new PhoneNumber(phone, "US")
+  const telephone = phone ? new PhoneNumber(phone, "US") : null
 
   console.log(acf_location)
 
@@ -126,37 +126,40 @@ const LocationCard = props => {
   const renderMetaTitle = (title = "") =>
     title ? <p className="small font-weight-bold">{title}</p> : null
 
+  const renderPhone = (telephone = "") =>
+    telephone ? (
+      <a href={telephone.getNumber()}>{telephone.getNumber()}</a>
+    ) : null
+
   return (
     <section>
       <Card>
         <CardBody className="p-0">
           <div className="p-4">
-          <h2 className="h5" dangerouslySetInnerHTML={{ __html: title }} />
-          <div className="mb-3">{renderTerms(categories.nodes)}</div>
-          <Row className="d-flex justify-content-between mb-4">
-            <Col>
-              <a href={website}>{urlParsed}</a>
-            </Col>
-            <Col>
-              <a href={telephone.getNumber()}>{telephone.getNumber()}</a>
-            </Col>
-          </Row>
-          <Row className="mb-4">
-            <Col>
-              <section>
-                {renderMetaTitle("Fulfillment")}
-                <div>{renderFulfillment(fulfillmentOptions)}</div>
-              </section>
-            </Col>
-            <Col>{renderOrdering(orderingOptions)}</Col>
-          </Row>
+            <h2 className="h5" dangerouslySetInnerHTML={{ __html: title }} />
+            <div className="mb-3">{renderTerms(categories.nodes)}</div>
+            <Row className="d-flex justify-content-between mb-4">
+              <Col>
+                <a href={website}>{urlParsed}</a>
+              </Col>
+              <Col>{renderPhone(telephone)}</Col>
+            </Row>
+            <Row className="mb-4">
+              <Col>
+                <section>
+                  {renderMetaTitle("Fulfillment")}
+                  <div>{renderFulfillment(fulfillmentOptions)}</div>
+                </section>
+              </Col>
+              <Col>{renderOrdering(orderingOptions)}</Col>
+            </Row>
           </div>
           <div className="text-right border-top">
-            <Button color="link" id={slug}>
+            <Button color="link" id={id}>
               More Info <ChevronDown size="1rem" />
             </Button>
           </div>
-          <UncontrolledCollapse toggler={`#${slug}`}>
+          <UncontrolledCollapse toggler={`${id}`}>
             <div className="p-4">
               <Row className="mb-4">
                 <Col>

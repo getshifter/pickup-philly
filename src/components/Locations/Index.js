@@ -12,6 +12,7 @@ const Locations = () => {
               id
               title
               slug
+              databaseId
               acf_location {
                 fulfillmentOptions
                 orderingOptions
