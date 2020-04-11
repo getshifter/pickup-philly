@@ -131,7 +131,7 @@ const LocationCard = props => {
       <Card>
         <CardBody className="p-0">
           <div className="p-4">
-          <h2 className="h5" dangerouslySetInnerHTML={{ __html: title }} />
+          <h2 dangerouslySetInnerHTML={{ __html: title }} />
           <div className="mb-3">{renderTerms(categories.nodes)}</div>
           <Row className="d-flex justify-content-between mb-4">
             <Col>
