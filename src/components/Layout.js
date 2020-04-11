@@ -17,10 +17,12 @@ const Layout = ({ primaryContent, secondaryContent, location }) => (
     <Header location={location} />
     <Container fluid>
       <Row>
-        <Col md="7">
+        <Col md="7" className="map-container">
           <div className="bg-dark h-100">{primaryContent}</div>
         </Col>
-        <Col md="5">{secondaryContent}</Col>
+        <Col md="5" className="list-container">
+          {secondaryContent}
+        </Col>
       </Row>
     </Container>
   </div>

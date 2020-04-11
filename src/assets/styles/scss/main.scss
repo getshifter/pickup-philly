@@ -1,2 +1,17 @@
 @import 'variables';
 @import '~bootstrap/scss/bootstrap.scss';
+
+// body, html {
+//   height: 100vh;
+//   overflow: hidden;
+// }
+
+.map-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.list-container {
+  height: 100vh;
+  overflow-y: scroll;
+}
