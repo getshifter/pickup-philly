@@ -9,11 +9,11 @@ import {
   Button,
   Col,
   Row,
-  UncontrolledTooltip,
 } from "reactstrap"
 import { renderCategories } from "./categories"
 import { renderIcon } from "./icon"
 import { renderOrdering } from "./ordering"
+import { renderFulfillment } from "./fulfillment"
 
 const LocationCard = props => {
   if (props.data === null) {
@@ -36,21 +36,6 @@ const LocationCard = props => {
   const telephone = phone ? new PhoneNumber(phone, "US") : null
 
   console.log(acf_location)
-
-  const renderFulfillmentNodes = (nodes, title) => (
-    <div>
-      {nodes.map(option => (
-        <span>
-          {option}
-          {`, `}
-        </span>
-      ))}
-    </div>
-  )
-
-  const renderFulfillment = (fulfillmentNodes = []) => (
-    <>{fulfillmentNodes ? renderFulfillmentNodes(fulfillmentNodes) : null}</>
-  )
 
   const renderPaymentNodes = (nodes, title) => (
     <div>
