@@ -33,7 +33,7 @@ const Index = ({ location }) => (
                 <NavbarBrand href="/">Pickup Philly</NavbarBrand>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
-                    <NavLink as={Link} to="/about/">
+                    <NavLink as={Link} to="/about/" className="display-3">
                       About
                     </NavLink>
                   </NavItem>
