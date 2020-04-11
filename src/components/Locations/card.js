@@ -17,6 +17,7 @@ import { renderFulfillment } from "./fulfillment"
 import { renderPayment } from "./payment"
 import { renderMetaTitle } from "./title"
 import { renderPhone } from "./phone"
+import { renderHours } from "./hours"
 
 const LocationCard = props => {
   if (props.data === null) {
@@ -55,7 +56,9 @@ const LocationCard = props => {
               <Col>
                 <section>
                   {renderMetaTitle("Fulfillment")}
-                  <div className="font-weight-bold">{renderFulfillment(fulfillmentOptions)}</div>
+                  <div className="font-weight-bold">
+                    {renderFulfillment(fulfillmentOptions)}
+                  </div>
                 </section>
               </Col>
               <Col>{renderOrdering(orderingOptions)}</Col>
@@ -69,18 +72,8 @@ const LocationCard = props => {
           <UncontrolledCollapse toggler={`${id}`}>
             <div className="p-4">
               <Row className="mb-4">
-                <Col>
-                <section className="font-weight-bold">
-                    {renderMetaTitle("Payment")}
-                    <div>{renderPayment(paymentOptions)}</div>
-                  </section>
-                </Col>
-                <Col>
-                  <section>
-                    {renderMetaTitle("Hours")}
-                    <div className="font-weight-bold" dangerouslySetInnerHTML={{ __html: hours }} />
-                  </section>
-                </Col>
+                {renderPayment(paymentOptions)}
+                {renderHours(hours)}
               </Row>
               <Row className="mb-4">
                 <Col>
