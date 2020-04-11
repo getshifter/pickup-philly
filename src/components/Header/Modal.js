@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { NavLink, Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
+import logo from "../../images/pickpuphilly-logo.png"
 
 const InfoModal = props => {
   const { buttonLabel, className } = props
@@ -14,15 +15,10 @@ const InfoModal = props => {
         {buttonLabel}
       </NavLink>
       <Modal isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        <ModalHeader toggle={toggle}><img src={logo} alt="logo" /></ModalHeader>
         <ModalBody>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+        Using the power of open source, let’s create a business directory tool for the Philadelphia community listing all businesses affected by the coronavirus outbreak reaching their customers with how to shop, modified hours of operation, and more.
+
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={toggle}>
