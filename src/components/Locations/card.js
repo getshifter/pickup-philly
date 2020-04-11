@@ -68,7 +68,7 @@ const LocationCard = props => {
 
   const renderOrderingNodes = (nodes, title) => (
     <div>
-      Order:
+      Order by:
       {nodes.map(option => (
         <span className="ml-2 text-green">{renderIcon(option)}</span>
       ))}
@@ -136,9 +136,6 @@ const LocationCard = props => {
             <Col>
               <a href={website}>{urlParsed}</a>
             </Col>
-            <Col>{renderOrdering(orderingOptions)}</Col>
-          </Row>
-          <Row className="d-flex justify-content-between mb-4">
             <Col>
               <a href={telephone.getNumber()}>{telephone.getNumber()}</a>
             </Col>
@@ -146,16 +143,11 @@ const LocationCard = props => {
           <Row className="mb-4">
             <Col>
               <section>
-                {renderMetaTitle("Payment")}
-                <div>{renderPayment(paymentOptions)}</div>
-              </section>
-            </Col>
-            <Col>
-              <section>
                 {renderMetaTitle("Fulfillment")}
                 <div>{renderFulfillment(fulfillmentOptions)}</div>
               </section>
             </Col>
+            <Col>{renderOrdering(orderingOptions)}</Col>
           </Row>
         </CardBody>
         <CardFooter>
@@ -187,13 +179,7 @@ const LocationCard = props => {
                 <Col>
                   <section>
                     {renderMetaTitle("Payment")}
-                    <div>{renderFulfillment(fulfillmentOptions)}</div>
-                  </section>
-                </Col>
-                <Col>
-                  <section>
-                    {renderMetaTitle("Fulfillment")}
-                    <div>{renderFulfillment(fulfillmentOptions)}</div>
+                    <div>{renderPayment(paymentOptions)}</div>
                   </section>
                 </Col>
               </Row>

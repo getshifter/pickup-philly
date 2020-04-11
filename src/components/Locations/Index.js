@@ -1,5 +1,4 @@
 import React from "react"
-import { Container, Row, Col } from "reactstrap"
 import { useStaticQuery, graphql } from "gatsby"
 import LocationCard from "../Locations/card"
 
