@@ -6,7 +6,6 @@ import {
   CardBody,
   UncontrolledCollapse,
   Button,
-  Col,
   Row,
 } from "reactstrap"
 import { renderCategories } from "./categories"
@@ -14,7 +13,6 @@ import { renderIcon } from "./icon"
 import { renderOrdering } from "./ordering"
 import { renderFulfillment } from "./fulfillment"
 import { renderPayment } from "./payment"
-import { renderMetaTitle } from "./title"
 import { renderPhone } from "./phone"
 import { renderHours } from "./hours"
 import { renderWebsite } from "./website"
