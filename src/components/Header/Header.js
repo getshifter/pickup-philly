@@ -31,7 +31,7 @@ const Index = ({ location }) => (
           <Row>
             <Col>
               <Navbar color="light" light expand="md">
-                <NavbarBrand href="/"><img src={logo} alt="logo" /></NavbarBrand>
+                <NavbarBrand href="/" className ="my-3"><img src={logo} alt="logo" /></NavbarBrand>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
                     <NavLink as={Link} to="/about/" className="display-3">
