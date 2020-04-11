@@ -40,6 +40,7 @@ const Locations = () => {
               categories: graphql_all_location_categories {
                 nodes {
                   name
+                  id
                 }
               }
             }
@@ -54,7 +55,7 @@ const Locations = () => {
   return (
     <>
       {locations.map(location => (
-        <LocationCard data={location} />
+        <LocationCard key={location.id} data={location} />
       ))}
     </>
   )

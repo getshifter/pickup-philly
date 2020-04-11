@@ -13,7 +13,7 @@ const IndexPage = ({ location }) => (
       </>
     }
   >
-    <Seo />
+    <Seo title="Pickup Philly" />
   </Layout>
 )
 

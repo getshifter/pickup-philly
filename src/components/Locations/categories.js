@@ -3,8 +3,9 @@ import { Badge } from "reactstrap"
 
 const renderCategoryNodes = (nodes, title) => (
   <div>
+    {console.log(nodes)}
     {nodes.map(term => (
-      <Badge color="primary" pill>
+      <Badge key={term.id} color="primary" pill>
         {term.name}
       </Badge>
     ))}
