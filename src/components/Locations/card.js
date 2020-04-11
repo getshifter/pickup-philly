@@ -40,7 +40,7 @@ const LocationCard = props => {
 
   return (
     <section>
-      <Card>
+      <Card className="mb-3">
         <CardBody className="p-0">
           <div className="p-4">
             <h2 className="display-3" dangerouslySetInnerHTML={{ __html: title }} />
