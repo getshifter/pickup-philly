@@ -44,7 +44,7 @@ const LocationCard = props => {
         <CardBody className="p-0">
           <div className="p-4">
             <h2 className="display-3" dangerouslySetInnerHTML={{ __html: title }} />
-            <div className="mb-3">{renderCategories(categories.nodes)}</div>
+            <div className="mt-3 mb-4">{renderCategories(categories.nodes)}</div>
             <Row className="d-flex justify-content-between mb-4">
               <Col>
                 <a href={website}>{urlParsed}</a>
