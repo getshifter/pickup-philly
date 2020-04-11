@@ -129,7 +129,8 @@ const LocationCard = props => {
   return (
     <section>
       <Card>
-        <CardBody>
+        <CardBody className="p-0">
+          <div className="p-4">
           <h2 className="h5" dangerouslySetInnerHTML={{ __html: title }} />
           <div className="mb-3">{renderTerms(categories.nodes)}</div>
           <Row className="d-flex justify-content-between mb-4">
@@ -149,16 +150,14 @@ const LocationCard = props => {
             </Col>
             <Col>{renderOrdering(orderingOptions)}</Col>
           </Row>
-        </CardBody>
-        <CardFooter>
-          <div className="text-right">
+          </div>
+          <div className="text-right border-top">
             <Button color="link" id={slug}>
               More Info <ChevronDown size="1rem" />
             </Button>
           </div>
           <UncontrolledCollapse toggler={`#${slug}`}>
-            <div>
-              <hr />
+            <div className="p-4">
               <Row className="mb-4">
                 <Col>
                   <section>
@@ -196,7 +195,7 @@ const LocationCard = props => {
               </Row>
             </div>
           </UncontrolledCollapse>
-        </CardFooter>
+        </CardBody>
       </Card>
     </section>
   )
