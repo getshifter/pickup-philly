@@ -4,12 +4,12 @@ const activeEnv =
 const config = {
   wordPressUrl:
     activeEnv === "production"
-      ? "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:42836/"
-      : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:42836/",
+      ? "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:30152/"
+      : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:30152/",
   wordPressGraphQlUrl:
     activeEnv === "production"
-      ? "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:42836/graphql/"
-      : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:42836/graphql/",
+      ? "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:30152/graphql/"
+      : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:30152/graphql/",
 }
 
 module.exports = { config }

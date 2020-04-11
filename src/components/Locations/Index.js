@@ -21,6 +21,7 @@ const Locations = () => {
                 phone
                 availabilityNotes
                 hours
+                employeeReliefFund
                 address {
                   city
                   country

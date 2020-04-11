@@ -18,6 +18,8 @@ import { renderMetaTitle } from "./title"
 import { renderPhone } from "./phone"
 import { renderHours } from "./hours"
 import { renderWebsite } from "./website"
+import { renderAdditionalInfo } from "./additional-info"
+import { renderEmployeeRelief } from "./employee-relief"
 
 const LocationCard = props => {
   if (props.data === null) {
@@ -33,6 +35,7 @@ const LocationCard = props => {
     hours,
     phone,
     availabilityNotes,
+    employeeReliefFund,
   } = acf_location
   const id = `id_` + databaseId
   const telephone = phone ? new PhoneNumber(phone, "US") : null
@@ -49,15 +52,8 @@ const LocationCard = props => {
               {renderPhone(telephone)}
             </Row>
             <Row>
-              <Col>
-                <section>
-                  {renderMetaTitle("Fulfillment")}
-                  <div className="font-weight-bold">
-                    {renderFulfillment(fulfillmentOptions)}
-                  </div>
-                </section>
-              </Col>
-              <Col>{renderOrdering(orderingOptions)}</Col>
+              {renderFulfillment(fulfillmentOptions)}
+              {renderOrdering(orderingOptions)}
             </Row>
           </div>
           <div className="text-right border-top">
@@ -71,27 +67,8 @@ const LocationCard = props => {
                 {renderPayment(paymentOptions)}
                 {renderHours(hours)}
               </Row>
-              <Row className="mb-4">
-                <Col>
-                  <section>
-                    {renderMetaTitle("Additional Info")}
-                    <div
-                      dangerouslySetInnerHTML={{ __html: availabilityNotes }}
-                    />
-                  </section>
-                </Col>
-              </Row>
-              <Row className="mb-4">
-                <Col>
-                  <section>
-                    {renderIcon("heart")}{" "}
-                    {renderMetaTitle("Employee Relief Fund")}
-                    <div
-                      dangerouslySetInnerHTML={{ __html: availabilityNotes }}
-                    />
-                  </section>
-                </Col>
-              </Row>
+              {renderAdditionalInfo(availabilityNotes)}
+              {renderEmployeeRelief(employeeReliefFund)}
             </div>
           </UncontrolledCollapse>
         </CardBody>
