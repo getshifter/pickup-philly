@@ -14,6 +14,9 @@ import { renderCategories } from "./categories"
 import { renderIcon } from "./icon"
 import { renderOrdering } from "./ordering"
 import { renderFulfillment } from "./fulfillment"
+import { renderPayment } from "./payment"
+import { renderMetaTitle } from "./title"
+import { renderPhone } from "./phone"
 
 const LocationCard = props => {
   if (props.data === null) {
@@ -36,29 +39,6 @@ const LocationCard = props => {
   const telephone = phone ? new PhoneNumber(phone, "US") : null
 
   console.log(acf_location)
-
-  const renderPaymentNodes = (nodes, title) => (
-    <div>
-      {nodes.map(option => (
-        <span>
-          {option}
-          {`, `}
-        </span>
-      ))}
-    </div>
-  )
-
-  const renderPayment = (paymentNodes = []) => (
-    <>{paymentNodes ? renderPaymentNodes(paymentNodes) : null}</>
-  )
-
-  const renderMetaTitle = (title = "") =>
-    title ? <p className="small font-weight-bold">{title}</p> : null
-
-  const renderPhone = (telephone = "") =>
-    telephone ? (
-      <a href={telephone.getNumber()}>{telephone.getNumber()}</a>
-    ) : null
 
   return (
     <section>
