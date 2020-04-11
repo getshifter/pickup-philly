@@ -5,14 +5,14 @@ import PhoneNumber from "awesome-phonenumber"
 import {
   Card,
   CardBody,
-  Badge,
   UncontrolledCollapse,
   Button,
   Col,
   Row,
   UncontrolledTooltip,
 } from "reactstrap"
-import { Phone, Globe, ChevronDown, Heart } from "@styled-icons/feather"
+import { renderCategories } from "./categories"
+import { renderIcon } from './icon'
 
 const LocationCard = props => {
   if (props.data === null) {
@@ -35,36 +35,6 @@ const LocationCard = props => {
   const telephone = phone ? new PhoneNumber(phone, "US") : null
 
   console.log(acf_location)
-
-  const renderIcon = icon => {
-    console.log(icon)
-    switch (icon) {
-      case "online":
-        icon = (
-          <>
-            <Globe size="1rem" id={icon} />
-            <UncontrolledTooltip target={icon}>
-              Order Online
-            </UncontrolledTooltip>
-          </>
-        )
-        break
-      case "phone":
-        icon = (
-          <>
-            <Phone size="1rem" id={icon} />
-            <UncontrolledTooltip target={icon}>
-              Order by Phone
-            </UncontrolledTooltip>
-          </>
-        )
-        break
-      default:
-        icon = null
-    }
-
-    return icon
-  }
 
   const renderOrderingNodes = (nodes, title) => (
     <div>
@@ -92,20 +62,6 @@ const LocationCard = props => {
 
   const renderFulfillment = (fulfillmentNodes = []) => (
     <>{fulfillmentNodes ? renderFulfillmentNodes(fulfillmentNodes) : null}</>
-  )
-
-  const renderCategoryNodes = (nodes, title) => (
-    <div>
-      {nodes.map(term => (
-        <Badge color="primary" pill>
-          {term.name}
-        </Badge>
-      ))}
-    </div>
-  )
-
-  const renderTerms = (categoryNodes = []) => (
-    <>{categoryNodes ? renderCategoryNodes(categoryNodes) : null}</>
   )
 
   const renderPaymentNodes = (nodes, title) => (
@@ -137,7 +93,7 @@ const LocationCard = props => {
         <CardBody className="p-0">
           <div className="p-4">
             <h2 className="h5" dangerouslySetInnerHTML={{ __html: title }} />
-            <div className="mb-3">{renderTerms(categories.nodes)}</div>
+            <div className="mb-3">{renderCategories(categories.nodes)}</div>
             <Row className="d-flex justify-content-between mb-4">
               <Col>
                 <a href={website}>{urlParsed}</a>
@@ -156,7 +112,7 @@ const LocationCard = props => {
           </div>
           <div className="text-right border-top">
             <Button color="link" id={id}>
-              More Info <ChevronDown size="1rem" />
+              More Info {renderIcon('chevron-down')}
             </Button>
           </div>
           <UncontrolledCollapse toggler={`${id}`}>
@@ -188,7 +144,7 @@ const LocationCard = props => {
               <Row className="mb-4">
                 <Col>
                   <section>
-                    <Heart size="1rem" />{" "}
+                    {renderIcon('heart')}{" "}
                     {renderMetaTitle("Employee Relief Fund")}
                     <div
                       dangerouslySetInnerHTML={{ __html: availabilityNotes }}
