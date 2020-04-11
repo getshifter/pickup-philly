@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Url from "url-parse"
+import PhoneNumber from "awesome-phonenumber"
 import {
   Card,
   CardBody,
@@ -19,7 +20,7 @@ const LocationCard = props => {
     return null
   }
 
-  const { id, title, acf_location, categories, slug } = props.data
+  const { title, acf_location, categories, slug } = props.data
   const {
     fulfillmentOptions,
     orderingOptions,
@@ -31,6 +32,7 @@ const LocationCard = props => {
   } = acf_location
   const url = Url(website)
   const urlParsed = url.host ? url.host : null
+  const telephone = new PhoneNumber(phone, "US")
 
   console.log(acf_location)
 
@@ -135,6 +137,11 @@ const LocationCard = props => {
               <a href={website}>{urlParsed}</a>
             </Col>
             <Col>{renderOrdering(orderingOptions)}</Col>
+          </Row>
+          <Row className="d-flex justify-content-between mb-4">
+            <Col>
+              <a href={telephone.getNumber()}>{telephone.getNumber()}</a>
+            </Col>
           </Row>
           <Row className="mb-4">
             <Col>
