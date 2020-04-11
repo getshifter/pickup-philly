@@ -1,18 +1,23 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Url from "url-parse"
 import PhoneNumber from "awesome-phonenumber"
 import {
   Card,
   CardBody,
-  Badge,
   UncontrolledCollapse,
   Button,
-  Col,
   Row,
-  UncontrolledTooltip,
 } from "reactstrap"
-import { Phone, Globe, ChevronDown, Heart } from "@styled-icons/feather"
+import { renderCategories } from "./categories"
+import { renderIcon } from "./icon"
+import { renderOrdering } from "./ordering"
+import { renderFulfillment } from "./fulfillment"
+import { renderPayment } from "./payment"
+import { renderPhone } from "./phone"
+import { renderHours } from "./hours"
+import { renderWebsite } from "./website"
+import { renderAdditionalInfo } from "./additional-info"
+import { renderEmployeeRelief } from "./employee-relief"
 
 const LocationCard = props => {
   if (props.data === null) {
@@ -28,174 +33,40 @@ const LocationCard = props => {
     hours,
     phone,
     availabilityNotes,
+    employeeReliefFund,
   } = acf_location
   const id = `id_` + databaseId
-  const url = Url(website)
-  const urlParsed = url.host ? url.host : null
   const telephone = phone ? new PhoneNumber(phone, "US") : null
-
-  console.log(acf_location)
-
-  const renderIcon = icon => {
-    console.log(icon)
-    switch (icon) {
-      case "online":
-        icon = (
-          <>
-            <Globe size="1rem" id={icon} />
-            <UncontrolledTooltip target={icon}>
-              Order Online
-            </UncontrolledTooltip>
-          </>
-        )
-        break
-      case "phone":
-        icon = (
-          <>
-            <Phone size="1rem" id={icon} />
-            <UncontrolledTooltip target={icon}>
-              Order by Phone
-            </UncontrolledTooltip>
-          </>
-        )
-        break
-      default:
-        icon = null
-    }
-
-    return icon
-  }
-
-  const renderOrderingNodes = (nodes, title) => (
-    <div>
-      Order by:
-      {nodes.map(option => (
-        <span className="ml-2 text-green">{renderIcon(option)}</span>
-      ))}
-    </div>
-  )
-
-  const renderOrdering = (orderingNodes = []) => (
-    <>{orderingNodes ? renderOrderingNodes(orderingNodes) : null}</>
-  )
-
-  const renderFulfillmentNodes = (nodes, title) => (
-    <div>
-      {nodes.map(option => (
-        <span>
-          {option}
-          {`, `}
-        </span>
-      ))}
-    </div>
-  )
-
-  const renderFulfillment = (fulfillmentNodes = []) => (
-    <>{fulfillmentNodes ? renderFulfillmentNodes(fulfillmentNodes) : null}</>
-  )
-
-  const renderCategoryNodes = (nodes, title) => (
-    <div>
-      {nodes.map(term => (
-        <Badge color="primary" pill>
-          {term.name}
-        </Badge>
-      ))}
-    </div>
-  )
-
-  const renderTerms = (categoryNodes = []) => (
-    <>{categoryNodes ? renderCategoryNodes(categoryNodes) : null}</>
-  )
-
-  const renderPaymentNodes = (nodes, title) => (
-    <div>
-      {nodes.map(option => (
-        <span>
-          {option}
-          {`, `}
-        </span>
-      ))}
-    </div>
-  )
-
-  const renderPayment = (paymentNodes = []) => (
-    <>{paymentNodes ? renderPaymentNodes(paymentNodes) : null}</>
-  )
-
-  const renderMetaTitle = (title = "") =>
-    title ? <p className="small font-weight-bold">{title}</p> : null
-
-  const renderPhone = (telephone = "") =>
-    telephone ? (
-      <a href={telephone.getNumber()}>{telephone.getNumber()}</a>
-    ) : null
 
   return (
     <section>
-      <Card>
+      <Card className="mb-3">
         <CardBody className="p-0">
           <div className="p-4">
-            <h2 className="h5" dangerouslySetInnerHTML={{ __html: title }} />
-            <div className="mb-3">{renderTerms(categories.nodes)}</div>
+            <h2 className="display-3" dangerouslySetInnerHTML={{ __html: title }} />
+            <div className="mt-3 mb-4">{renderCategories(categories.nodes)}</div>
             <Row className="d-flex justify-content-between mb-4">
-              <Col>
-                <a href={website}>{urlParsed}</a>
-              </Col>
-              <Col>{renderPhone(telephone)}</Col>
+              {renderWebsite(website)}
+              {renderPhone(telephone)}
             </Row>
-            <Row className="mb-4">
-              <Col>
-                <section>
-                  {renderMetaTitle("Fulfillment")}
-                  <div>{renderFulfillment(fulfillmentOptions)}</div>
-                </section>
-              </Col>
-              <Col>{renderOrdering(orderingOptions)}</Col>
+            <Row>
+              {renderFulfillment(fulfillmentOptions)}
+              {renderOrdering(orderingOptions)}
             </Row>
           </div>
           <div className="text-right border-top">
             <Button color="link" id={id}>
-              More Info <ChevronDown size="1rem" />
+              More Info {renderIcon("chevron-down")}
             </Button>
           </div>
           <UncontrolledCollapse toggler={`${id}`}>
             <div className="p-4">
               <Row className="mb-4">
-                <Col>
-                  <section>
-                    {renderMetaTitle("Payment")}
-                    <div>{renderPayment(paymentOptions)}</div>
-                  </section>
-                </Col>
-                <Col>
-                  <section>
-                    {renderMetaTitle("Hours")}
-                    <div dangerouslySetInnerHTML={{ __html: hours }} />
-                  </section>
-                </Col>
+                {renderPayment(paymentOptions)}
+                {renderHours(hours)}
               </Row>
-              <Row className="mb-4">
-                <Col>
-                  <section>
-                    {renderMetaTitle("Additional Info")}
-                    <div
-                      dangerouslySetInnerHTML={{ __html: availabilityNotes }}
-                    />
-                  </section>
-                </Col>
-              </Row>
-              <Row className="mb-4">
-                <Col>
-                  <section>
-                    <Heart size="1rem" />{" "}
-                    {renderMetaTitle("Employee Relief Fund")}
-                    <div
-                      dangerouslySetInnerHTML={{ __html: availabilityNotes }}
-                    />
-                  </section>
-                </Col>
-              </Row>
+              {renderAdditionalInfo(availabilityNotes)}
+              {renderEmployeeRelief(employeeReliefFund)}
             </div>
           </UncontrolledCollapse>
         </CardBody>

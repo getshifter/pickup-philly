@@ -32,8 +32,10 @@ $body-color: #2F2D1B !default;
 
 $badge-font-size: 0.75em !default;
 $badge-font-weight: $font-weight-normal !default;
-$badge-padding-y: 0.75em !default;
-$badge-padding-x: 0.5em !default;
+$badge-padding-y: 0.45em !default;
+$badge-padding-x: 0.75em !default;
+
+$badge-pill-padding-x:  1.25em !default;
 
 .badge {
   background: transparent !important;
