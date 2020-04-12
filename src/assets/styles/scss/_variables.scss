@@ -1,3 +1,7 @@
+// Bootstrap Vars Reference:
+// https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss
+
+// Color system
 $gray-100: #efefef !default;
 $gray-300: #d7d7d7 !default;
 $gray-500: #606568 !default;
@@ -6,12 +10,19 @@ $dark: $gray-800 !default;
 $light: $gray-100 !default;
 $green: #00a18a !default;
 $primary: $green !default;
+
+// Navbar
 $navbar-light-hover-color: rgba($green, 0.7) !default;
-$link-color: $primary !default;
 $navbar-light-active-color: $green !default;
 $navbar-light-color: $green !default;
 $navbar-light-brand-color: $navbar-light-active-color !default;
 $navbar-light-brand-hover-color: $navbar-light-active-color !default;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: $primary !default;
 
 // Typography
 //
