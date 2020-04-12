@@ -33,7 +33,7 @@ const Index = ({ location }) => (
                 <NavbarBrand href="/">Pickup Philly</NavbarBrand>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
-                  <InfoModal buttonLabel="About" />
+                  <InfoModal buttonLabel="About"/>
                   </NavItem>
                 </Nav>
               </Navbar>

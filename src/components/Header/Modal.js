@@ -13,7 +13,7 @@ const InfoModal = props => {
 
   return (
     <div>
-      <NavLink color="primary" onClick={toggle} className="display-3">
+      <NavLink color="primary" onClick={toggle} className="display-3 modal__header-aboutlink" >
        {buttonLabel}
       </NavLink>
       <Modal isOpen={modal} toggle={toggle} className={className}>
