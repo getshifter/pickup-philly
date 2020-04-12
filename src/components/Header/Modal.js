@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { NavLink, Modal, ModalHeader, ModalBody, ModalFooter, Col } from "reactstrap"
-import { Twitter } from "@styled-icons/feather/"
+import { Twitter, ArrowRight } from "@styled-icons/feather/"
 import logo from "../../images/pickpuphilly-logo-light.png"
 
 
@@ -24,7 +24,7 @@ const InfoModal = props => {
         </ModalBody>
         <ModalFooter className="mb-4 justify-content-between display-3">
           <Col>
-          <a className="text-white" href="/">Contact Us</a>
+          <a className="text-white" href="/">Contact Us <ArrowRight size="2rem" /></a>
           </Col>
           <Col className="text-right">
           <a className="text-white" href="twitter.com"><Twitter size="2rem"/></a>

@@ -51,6 +51,18 @@ $badge-pill-padding-x:  1.25em !default;
   color: $dark !important;
 }
 
+// Modals
+$modal-backdrop-bg: $light !default;
+$modal-backdrop-opacity: .85 !default;
+$modal-content-bg: $green !default;
+$modal-dialog-margin-sm-up: 3rem !default;
+$modal-dialog-margin-y-sm-up: 4rem !default;
+$modal-inner-padding: 2rem !default;
+$modal-md: 900px !default;
+$modal-content-border-color: $green !default;
+$modal-header-border-color: $green !default;
+$modal-footer-border-color: $green !default;
+
 // Close
 $close-font-size: 5.5rem !default;
 $close-font-weight: 100 !default;
@@ -70,14 +82,3 @@ $card-bg: $light !default;
 $card-cap-bg: $light !default;
 $card-border-color: $border-color !default;
 
-// Modals
-$modal-backdrop-bg: $light !default;
-$modal-backdrop-opacity: .85 !default;
-$modal-content-bg: $green !default;
-$modal-dialog-margin-sm-up: 3rem !default;
-$modal-dialog-margin-y-sm-up: 4rem !default;
-$modal-inner-padding: 2rem !default;
-$modal-md: 900px !default;
-$modal-content-border-color: $green !default;
-$modal-header-border-color: $green !default;
-$modal-footer-border-color: $green !default;
