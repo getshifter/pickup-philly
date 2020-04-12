@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { NavLink, Modal, ModalHeader, ModalBody, ModalFooter, Row } from "reactstrap"
 import { Twitter } from "@styled-icons/feather/"
-import logo from "../../images/pickpuphilly-logo.png"
+import logo from "../../images/pickpuphilly-logo-light.png"
 
 
 const InfoModal = props => {
