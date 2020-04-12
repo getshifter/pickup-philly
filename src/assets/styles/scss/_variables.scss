@@ -22,6 +22,9 @@ $font-weight-bolder: bolder !default;
 $font-weight-base: $font-weight-normal !default;
 
 
+$display2-size: 2.5rem;
+$display3-size: 1.75rem;
+
 // Body
 //
 // Settings for the `<body>` element.
@@ -61,4 +64,7 @@ $card-border-color: $border-color !default;
 $modal-backdrop-bg: $light !default;
 $modal-backdrop-opacity: .85 !default;
 $modal-content-bg: $green !default;
+$modal-dialog-margin: 3rem !default;
 $modal-dialog-margin-y-sm-up: 4rem !default;
+$modal-inner-padding: 2rem !default;
+$modal-md: 900px !default;
