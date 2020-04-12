@@ -31,6 +31,7 @@ $display3-size: 1.75rem;
 
 $body-bg: $light !default;
 $body-color: #2F2D1B !default;
+$border-radius: 0 !default;
 
 // Badges
 
@@ -68,3 +69,4 @@ $modal-dialog-margin-sm-up: 3rem !default;
 $modal-dialog-margin-y-sm-up: 4rem !default;
 $modal-inner-padding: 2rem !default;
 $modal-md: 900px !default;
+$modal-content-border-color: $green !default;
