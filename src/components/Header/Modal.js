@@ -1,6 +1,8 @@
 import React, { useState } from "react"
-import { NavLink, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
+import { NavLink, Modal, ModalHeader, ModalBody, ModalFooter, Row } from "reactstrap"
+import { Twitter } from "@styled-icons/feather/"
 import logo from "../../images/pickpuphilly-logo.png"
+
 
 const InfoModal = props => {
   const { buttonLabel, className } = props
@@ -20,7 +22,11 @@ const InfoModal = props => {
         Using the power of open source, let’s create a business directory tool for the Philadelphia community listing all businesses affected by the coronavirus outbreak reaching their customers with how to shop, modified hours of operation, and more.
 
         </ModalBody>
-        <ModalFooter>
+        <ModalFooter className="mb-4">
+          <Row className= "d-inline justify-content-between display-2 text-white">
+          Contact Us
+         <Twitter size="2rem"/>
+          </Row>
         </ModalFooter>
       </Modal>
     </div>
