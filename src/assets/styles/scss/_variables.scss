@@ -13,13 +13,17 @@ $navbar-light-color: $green !default;
 $navbar-light-brand-color: $navbar-light-active-color !default;
 $navbar-light-brand-hover-color: $navbar-light-active-color !default;
 
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
 $font-weight-lighter: lighter !default;
 $font-weight-light: 200 !default;
 $font-weight-normal: 300 !default;
 $font-weight-bold: 700 !default;
 $font-weight-bolder: bolder !default;
-
 $font-weight-base: $font-weight-normal !default;
+$display3-size: 1.75rem !default;
 
 // Body
 //
