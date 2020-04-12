@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { NavLink, Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
+import { NavLink, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
 import logo from "../../images/pickpuphilly-logo.png"
 
 const InfoModal = props => {
@@ -11,8 +11,8 @@ const InfoModal = props => {
 
   return (
     <div>
-      <NavLink color="primary" onClick={toggle}>
-        {buttonLabel}
+      <NavLink color="primary" onClick={toggle} className="display-3">
+       {buttonLabel}
       </NavLink>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}><img src={logo} alt="logo" /></ModalHeader>
@@ -21,12 +21,6 @@ const InfoModal = props => {
 
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>
-            Do Something
-          </Button>{" "}
-          <Button color="secondary" onClick={toggle}>
-            Cancel
-          </Button>
         </ModalFooter>
       </Modal>
     </div>
