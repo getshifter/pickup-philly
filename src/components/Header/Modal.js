@@ -18,7 +18,7 @@ const InfoModal = props => {
       </NavLink>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}><img src={logo} alt="logo" className="mt-4 ml-4"/></ModalHeader>
-        <ModalBody className="display-2 px-5 text-light">
+        <ModalBody className="display-2 px-sm-5 px-xs-0 text-light">
         Using the power of open source, let’s create a business directory tool for the Philadelphia community listing all businesses affected by the coronavirus outbreak reaching their customers with how to shop, modified hours of operation, and more.
 
         </ModalBody>
