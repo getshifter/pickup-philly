@@ -26,7 +26,7 @@ const Index = ({ location }) => (
       }
     `}
     render={data => (
-      <header className="bg-light">
+      <header className="bg-light border-bottom">
         <Container fluid>
           <Row>
             <Col>

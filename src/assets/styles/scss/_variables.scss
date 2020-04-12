@@ -26,7 +26,7 @@ $font-weight-base: $font-weight-normal !default;
 // Settings for the `<body>` element.
 
 $body-bg: $light !default;
-$body-color: #2F2D1B !default;
+$body-color: #2f2d1b !default;
 
 // Badges
 
@@ -35,7 +35,7 @@ $badge-font-weight: $font-weight-normal !default;
 $badge-padding-y: 0.45em !default;
 $badge-padding-x: 0.75em !default;
 
-$badge-pill-padding-x:  1.25em !default;
+$badge-pill-padding-x: 1.25em !default;
 
 .badge {
   background: transparent !important;
@@ -49,9 +49,13 @@ $badge-pill-padding-x:  1.25em !default;
 
 $border-width: 1px !default;
 $border-color: $gray-300 !default;
+$rounded-pill: 50rem !default;
 
 // Cards
 
 $card-bg: $light !default;
 $card-cap-bg: $light !default;
 $card-border-color: $border-color !default;
+
+// Forms
+$input-border-radius: $rounded-pill !default;

@@ -8,7 +8,7 @@ import Map from "../components/Map"
 const IndexPage = ({ location }) => {
   const data = useStaticQuery(
     graphql`
-      query LOCATIONS_OTHER {
+      query LOCATIONS {
         wpgraphql {
           locations: graphql_all_locations(
             first: 500
@@ -63,7 +63,7 @@ const IndexPage = ({ location }) => {
       primaryContent={<Map data={data} />}
       secondaryContent={
         <>
-          <Locations />
+          <Locations data={data} />
         </>
       }
     >

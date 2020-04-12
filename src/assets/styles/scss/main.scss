@@ -1,7 +1,12 @@
 @import "variables";
 @import "~bootstrap/scss/bootstrap.scss";
 
-.map-container {
+// body, html {
+//   height: 100vh;
+//   overflow: hidden;
+// }
+
+.mapContainer {
   height: 100vh;
   overflow: hidden;
 }

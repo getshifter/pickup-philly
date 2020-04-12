@@ -1,66 +1,22 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import LocationCard from "../Locations/card"
+import Search from "../search"
 
-const Locations = () => {
-  const data = useStaticQuery(
-    graphql`
-      query LOCATIONS {
-        wpgraphql {
-          locations: graphql_all_locations(
-            first: 500
-            where: { orderby: { field: TITLE, order: ASC } }
-          ) {
-            nodes {
-              id
-              title
-              slug
-              databaseId
-              acf_location {
-                fulfillmentOptions
-                orderingOptions
-                paymentOptions
-                website
-                phone
-                availabilityNotes
-                hours
-                employeeReliefFund
-                address {
-                  city
-                  country
-                  countryShort
-                  latitude
-                  longitude
-                  placeId
-                  postCode
-                  state
-                  stateShort
-                  streetAddress
-                  streetName
-                  streetNumber
-                  zoom
-                }
-              }
-              categories: graphql_all_location_categories {
-                nodes {
-                  name
-                  id
-                }
-              }
-            }
-          }
-        }
-      }
-    `
-  )
-
-  const locations = data.wpgraphql.locations.nodes
+const Locations = props => {
+  const locations = props.data.wpgraphql.locations.nodes
 
   return (
     <>
-      {locations.map(location => (
-        <LocationCard key={location.id} data={location} />
-      ))}
+      <div>
+        <div className="mb-4 px-3 pt-4">
+          <Search />
+        </div>
+      </div>
+      <div className="border-top list-container">
+        {locations.map(location => (
+          <LocationCard key={location.id} data={location} />
+        ))}
+      </div>
     </>
   )
 }
