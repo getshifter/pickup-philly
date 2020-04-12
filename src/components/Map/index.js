@@ -28,7 +28,7 @@ export default class Map extends React.Component {
         type: "Feature",
         properties: {
           icon: "theatre",
-          description: title
+          title: title,
         },
         geometry: {
           type: "Point",
@@ -48,7 +48,7 @@ export default class Map extends React.Component {
 
     const map = new mapboxgl.Map({
       container: this.mapContainer,
-      style: "mapbox://styles/mapbox/streets-v11",
+      style: 'mapbox://styles/mapbox/light-v10',
       center: [this.state.lng, this.state.lat],
       zoom: this.state.zoom,
     })
