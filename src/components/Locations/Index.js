@@ -7,7 +7,10 @@ const Locations = () => {
     graphql`
       query LOCATIONS {
         wpgraphql {
-          locations: graphql_all_locations(first: 500, where: {orderby: {field: TITLE, order: ASC}}) {
+          locations: graphql_all_locations(
+            first: 500
+            where: { orderby: { field: TITLE, order: ASC } }
+          ) {
             nodes {
               id
               title

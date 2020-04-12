@@ -1,83 +1,8 @@
 import React from "react"
 import mapboxgl from "mapbox-gl"
+import PropTypes from "prop-types"
 import "./style.scss"
 mapboxgl.accessToken = process.env.GATSBY_MAPBOX_API_TOKEN
-
-var places = {
-  type: "FeatureCollection",
-  features: [
-    {
-      type: "Feature",
-      properties: {
-        icon: "theatre",
-      },
-      geometry: {
-        type: "Point",
-        coordinates: [-77.038659, 38.931567],
-      },
-    },
-    {
-      type: "Feature",
-      properties: {
-        icon: "theatre",
-      },
-      geometry: {
-        type: "Point",
-        coordinates: [-77.003168, 38.894651],
-      },
-    },
-    {
-      type: "Feature",
-      properties: {
-        icon: "bar",
-      },
-      geometry: {
-        type: "Point",
-        coordinates: [-77.090372, 38.881189],
-      },
-    },
-    {
-      type: "Feature",
-      properties: {
-        icon: "bicycle",
-      },
-      geometry: {
-        type: "Point",
-        coordinates: [-77.052477, 38.943951],
-      },
-    },
-    {
-      type: "Feature",
-      properties: {
-        icon: "music",
-      },
-      geometry: {
-        type: "Point",
-        coordinates: [-77.031706, 38.914581],
-      },
-    },
-    {
-      type: "Feature",
-      properties: {
-        icon: "music",
-      },
-      geometry: {
-        type: "Point",
-        coordinates: [-77.020945, 38.878241],
-      },
-    },
-    {
-      type: "Feature",
-      properties: {
-        icon: "music",
-      },
-      geometry: {
-        type: "Point",
-        coordinates: [-77.007481, 38.876516],
-      },
-    },
-  ],
-}
 
 export default class Map extends React.Component {
   constructor(props) {
@@ -90,7 +15,36 @@ export default class Map extends React.Component {
   }
 
   componentDidMount() {
-    var filterGroup = document.getElementById("filter-group")
+    const filterGroup = document.getElementById("filter-group")
+    const { wpgraphql } = this.props.data
+    const locations = wpgraphql.locations.nodes
+    let features = []
+    locations.map((location, i) => {
+      // console.log(location)
+      const title = location.title
+      const longitude = location.acf_location.address.longitude
+      const latitude = location.acf_location.address.latitude
+      features[i] = {
+        type: "Feature",
+        properties: {
+          icon: "theatre",
+          description: title
+        },
+        geometry: {
+          type: "Point",
+          coordinates: [longitude, latitude],
+        },
+      }
+    })
+
+    console.log(features)
+
+    var places = {
+      type: "FeatureCollection",
+      features: features,
+    }
+
+    console.log(places)
 
     const map = new mapboxgl.Map({
       container: this.mapContainer,
@@ -170,4 +124,12 @@ export default class Map extends React.Component {
       </>
     )
   }
+}
+
+Map.propTypes = {
+  data: PropTypes.object,
+}
+
+Map.defaultProps = {
+  data: null,
 }
