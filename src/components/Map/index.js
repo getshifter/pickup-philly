@@ -1,6 +1,7 @@
 import React from "react"
 import mapboxgl from "mapbox-gl"
 import PropTypes from "prop-types"
+import 'mapbox-gl/dist/mapbox-gl.css'
 import "./style.scss"
 
 mapboxgl.accessToken = process.env.GATSBY_MAPBOX_API_TOKEN
@@ -61,7 +62,7 @@ export default class Map extends React.Component {
         new mapboxgl.Marker(el)
           .setLngLat(marker.geometry.coordinates)
           .setPopup(
-            new mapboxgl.Popup() // add popups
+            new mapboxgl.Popup()
               .setHTML(
                 "<h3>" +
                   marker.properties.title +
