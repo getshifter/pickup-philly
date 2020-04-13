@@ -55,18 +55,18 @@ module.exports = {
         defaultQuality: 90,
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-manifest",
-    //   options: {
-    //     name: "Pickup Philly",
-    //     short_name: "Pickup Philly",
-    //     start_url: "/",
-    //     background_color: "#f0f2f5",
-    //     theme_color: "#001529",
-    //     display: "minimal-ui",
-    //     icon: "src/images/icon.png",
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "Pickup Philly",
+        short_name: "Pickup Philly",
+        start_url: "/",
+        background_color: "#f0f2f5",
+        theme_color: "#001529",
+        display: "minimal-ui",
+        icon: "src/images/icon.png",
+      },
+    },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
