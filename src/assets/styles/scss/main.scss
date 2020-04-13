@@ -10,3 +10,8 @@
   height: 100vh;
   overflow-y: scroll;
 }
+.modal__header-aboutlink {
+&:hover {
+ cursor: pointer !important;
+}
+}
