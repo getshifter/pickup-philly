@@ -4,11 +4,11 @@ const activeEnv =
 const config = {
   wordPressUrl:
     activeEnv === "production"
-      ? "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:50003/"
+      ? `REPLACE_SHIFTER_URL/`
       : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:50003/",
   wordPressGraphQlUrl:
     activeEnv === "production"
-      ? "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:50003/graphql/"
+      ? `REPLACE_SHIFTER_URL/graphql/`
       : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:50003/graphql/",
 }
 
