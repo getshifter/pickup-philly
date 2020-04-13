@@ -25,6 +25,7 @@ import {
   PaginationItem,
   Button,
 } from "reactstrap"
+import LocationCard from "../Locations/card"
 import { createLocalLink } from "../../utils"
 
 const algoliaClient = algoliasearch(
@@ -71,58 +72,6 @@ const SearchBox = ({ currentRefinement, refine }) => {
 }
 
 const CustomSearchBox = connectSearchBox(SearchBox)
-
-const SearchPagination = ({
-  currentRefinement,
-  nbPages,
-  refine,
-  createURL,
-}) => {
-  const previousPage = currentRefinement - 1
-  const nextPage = currentRefinement + 1
-
-  if (nbPages === 0) {
-    return null
-  }
-
-  return (
-    <Pagination listClassName="d-flex justify-content-between mt-3">
-      <PaginationItem>
-        <Button
-          disabled={currentRefinement === 1 ? true : false}
-          color="white"
-          href={createURL(previousPage)}
-          onClick={event => {
-            event.preventDefault()
-            refine(previousPage)
-          }}
-        >
-          Previous Page
-        </Button>
-      </PaginationItem>
-      <span className="text-monospace">
-        <span className="h3 text-white">{currentRefinement}</span>
-        {" / "}
-        <small>{nbPages}</small>
-      </span>
-      <PaginationItem>
-        <Button
-          disabled={currentRefinement === nbPages ? true : false}
-          color="white"
-          href={createURL(nextPage)}
-          onClick={event => {
-            event.preventDefault()
-            refine(nextPage)
-          }}
-        >
-          Next Page
-        </Button>
-      </PaginationItem>
-    </Pagination>
-  )
-}
-
-const CustomPagination = connectPagination(SearchPagination)
 
 const Highlight = ({ highlight, attribute, hit }) => {
   const parsedHit = highlight({
@@ -173,7 +122,7 @@ class Search extends Component {
               <div className="">
                 <InstantSearch
                   searchClient={searchClient}
-                  indexName="wp_posts_post"
+                  indexName="wp_posts_location"
                 >
                   <Configure
                     clickAnalytics
@@ -182,7 +131,6 @@ class Search extends Component {
                   />
                   <CustomSearchBox />
                   <CustomHits />
-                  <CustomPagination />
                 </InstantSearch>
               </div>
             </Col>
@@ -193,18 +141,12 @@ class Search extends Component {
   }
 }
 
-const Hit = ({ hit }) => (
-  <ListGroupItem>
-    <ListGroupItemHeading>
-      <a href={createLocalLink(hit.permalink)}>
-        <CustomHighlight hit={hit} attribute="post_title" />
-      </a>
-    </ListGroupItemHeading>
-    <ListGroupItemText className="text-body">
-      <Snippet hit={hit} attribute="content" tagName="mark" />
-    </ListGroupItemText>
-  </ListGroupItem>
-)
+const Hit = ({ hit }) => {
+  console.log(hit)
+  return (
+    <LocationCard data={hit} />
+  )
+}
 
 const HitWithInsights = connectHitInsights()(Hit)
 

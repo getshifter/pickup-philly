@@ -1,17 +1,30 @@
 @import "variables";
 @import "~bootstrap/scss/bootstrap.scss";
 
-.map-container {
-  height: 100vh;
-  overflow: hidden;
+body {
+  max-height: 100vh;
 }
 
-.list-container {
+.map-container {
+  height: 50vh;
+  overflow: hidden;
+
+  @include media-breakpoint-up(md) {
+    height: 100vh;
+  }
+}
+
+.list-wrapper {
   height: 100vh;
   overflow-y: scroll;
 }
-.modal__header-aboutlink {
-&:hover {
- cursor: pointer !important;
+
+.list-container {
+  overflow-y: scroll;
 }
+
+.modal__header-aboutlink {
+  &:hover {
+    cursor: pointer !important;
+  }
 }
