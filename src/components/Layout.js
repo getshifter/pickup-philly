@@ -8,19 +8,21 @@ const Layout = ({ primaryContent, secondaryContent, location }) => (
   <div>
     <Helmet
       bodyAttributes={{
-        class: "h-100",
+        // class: "h-100",
       }}
       htmlAttributes={{
-        class: "h-100",
+        // class: "h-100",
       }}
     />
     <Header location={location} />
     <Container fluid>
       <Row>
         <Col md="7">
-          <div className="bg-dark h-100">{primaryContent}</div>
+          <div className="bg-dark">{primaryContent}</div>
         </Col>
-        <Col md="5">{secondaryContent}</Col>
+        <Col md="5">
+          {secondaryContent}
+        </Col>
       </Row>
     </Container>
   </div>

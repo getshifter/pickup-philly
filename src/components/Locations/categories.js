@@ -3,7 +3,6 @@ import { Badge } from "reactstrap"
 
 const renderCategoryNodes = (nodes, title) => (
   <div>
-    {console.log(nodes)}
     {nodes.map((term, i) => (
       <Badge
         key={term.id}

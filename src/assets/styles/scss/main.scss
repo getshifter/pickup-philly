@@ -1,6 +1,15 @@
-@import 'variables';
-@import '~bootstrap/scss/bootstrap.scss';
+@import "variables";
+@import "~bootstrap/scss/bootstrap.scss";
 
+.map-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.list-container {
+  height: 100vh;
+  overflow-y: scroll;
+}
 .modal__header-aboutlink {
 &:hover {
  cursor: pointer !important;
