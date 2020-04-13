@@ -1,4 +1,4 @@
-import { Link, StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import {
@@ -6,11 +6,11 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   Container,
   Col,
   Row,
 } from "reactstrap"
+import InfoModal from './Modal'
 import logo from "../../images/pickupphilly-logo.png"
 // import SiteMenu from "../SiteMenu"
 
@@ -34,9 +34,7 @@ const Index = ({ location }) => (
                 <NavbarBrand href="/" className ="my-3"><img src={logo} alt="logo" /></NavbarBrand>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
-                    <NavLink as={Link} to="/about/" className="display-3">
-                      About
-                    </NavLink>
+                    <InfoModal buttonLabel="About"/>
                   </NavItem>
                 </Nav>
               </Navbar>

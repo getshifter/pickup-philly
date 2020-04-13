@@ -1,6 +1,8 @@
 @import 'variables';
 @import '~bootstrap/scss/bootstrap.scss';
 
-.display-3 {
-    font-size:1.75rem;
+.modal__header-aboutlink {
+&:hover {
+ cursor: pointer !important;
+}
 }
