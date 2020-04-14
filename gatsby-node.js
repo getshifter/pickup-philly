@@ -12,32 +12,47 @@
 //   await createTags({ actions, graphql })
 // }
 
-exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
-  const config = getConfig()
-
-  let newConfig = {
-    ...config,
-    module: {
-      ...config.module,
-      noParse: /(mapbox-gl)\.js$/,
-    },
-  }
-
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html") {
-    newConfig = {
-      ...newConfig,
+    actions.setWebpackConfig({
       module: {
-        ...newConfig.module,
         rules: [
-          ...newConfig.module.rules,
           {
-            test: /(mapbox-gl)\.js$/,
-            loader: "null-loader",
+            test: /mapbox-gl/,
+            use: loaders.null(),
           },
         ],
       },
-    }
+    })
   }
-
-  actions.replaceWebpackConfig(newConfig)
 }
+
+// exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
+//   const config = getConfig()
+
+//   let newConfig = {
+//     ...config,
+//     module: {
+//       ...config.module,
+//       noParse: /(mapbox-gl)\.js$/,
+//     },
+//   }
+
+//   if (stage === "build-html") {
+//     newConfig = {
+//       ...newConfig,
+//       module: {
+//         ...newConfig.module,
+//         rules: [
+//           ...newConfig.module.rules,
+//           {
+//             test: /(mapbox-gl)\.js$/,
+//             loader: "null-loader",
+//           },
+//         ],
+//       },
+//     }
+//   }
+
+//   actions.replaceWebpackConfig(newConfig)
+// }
