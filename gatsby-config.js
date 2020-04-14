@@ -64,7 +64,7 @@ module.exports = {
         background_color: "#f0f2f5",
         theme_color: "#001529",
         display: "minimal-ui",
-        icon: "src/images/icon.png",
+        icon: "/pickupphilly-logo.png",
       },
     },
     {
