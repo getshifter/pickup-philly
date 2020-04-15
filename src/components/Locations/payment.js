@@ -7,11 +7,13 @@ const renderPaymentNodes = (nodes, title) => {
   return commaList(nodes)
 }
 
-export const renderPayment = (paymentNodes = []) => (
+export const renderPayment = (paymentNodes = [], title = "") => (
   <Col>
     <section className="font-weight-bold">
       {renderMetaTitle("Payment")}
-      {paymentNodes ? renderPaymentNodes(paymentNodes) : renderReportInfo()}
+      {paymentNodes
+        ? renderPaymentNodes(paymentNodes)
+        : renderReportInfo(title)}
     </section>
   </Col>
 )

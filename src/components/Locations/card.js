@@ -49,8 +49,8 @@ const LocationCard = props => {
               {renderPhone(telephone)}
             </Row>
             <Row>
-              {renderFulfillment(fulfillmentOptions)}
-              {renderOrdering(orderingOptions)}
+              {renderFulfillment(fulfillmentOptions, title)}
+              {renderOrdering(orderingOptions, title)}
             </Row>
           </div>
           <div className="text-right border-top">
@@ -61,8 +61,8 @@ const LocationCard = props => {
           <UncontrolledCollapse toggler={`${id}`}>
             <div className="p-4">
               <Row className="mb-4">
-                {renderPayment(paymentOptions)}
-                {renderHours(hours)}
+                {renderPayment(paymentOptions, title)}
+                {renderHours(hours, title)}
               </Row>
               {renderAdditionalInfo(availabilityNotes)}
               {renderEmployeeRelief(employeeReliefFund)}
