@@ -4,12 +4,7 @@ import PropTypes from "prop-types"
 import "mapbox-gl/dist/mapbox-gl.css"
 import "./style.scss"
 
-const activeEnv =
-  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
-mapboxgl.accessToken =
-activeEnv === "production"
-  ? `pk.eyJ1IjoiZW1haWxkYW5vIiwiYSI6ImNqc2NiMGY1NDBpenQ0NW8zdjYxNTN1cGIifQ.O6pJTTir0UYZMLT62elQPw`
-  : `pk.eyJ1IjoiZW1haWxkYW5vIiwiYSI6ImNqc2NiMGY1NDBpenQ0NW8zdjYxNTN1cGIifQ.O6pJTTir0UYZMLT62elQPw`;
+mapboxgl.accessToken = `pk.eyJ1IjoiZW1haWxkYW5vIiwiYSI6ImNqc2NiMGY1NDBpenQ0NW8zdjYxNTN1cGIifQ.O6pJTTir0UYZMLT62elQPw`
 
 export default class Map extends React.Component {
   constructor(props) {
