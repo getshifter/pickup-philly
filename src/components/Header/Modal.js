@@ -41,10 +41,10 @@ const InfoModal = props => {
           />
         </ModalHeader>
         <ModalBody className="display-2 px-sm-5 px-xs-0 pb-5 text-light">
-          Using the power of open source, let’s create a business directory tool
-          for the Philadelphia community listing all businesses affected by the
-          coronavirus outbreak reaching their customers with how to shop,
-          modified hours of operation, and more.
+          Pickup Philly is an open source business directory to help connect
+          essential services with their customers during the coronavirus
+          outbreak, including information on how to shop, modified hours of
+          operation, and more.
         </ModalBody>
         <ModalFooter className="pt-5 mb-4 justify-content-between display-3 align-items-start">
           <div>
@@ -59,7 +59,7 @@ const InfoModal = props => {
             <div>
               <a
                 className="text-white"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSceYKnS5BTSzN0Ym-omW-A8kUjp-9Sb0AZQ1csfXZ7_yLXAFA/viewform"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdAMspEfX9xsS_ZVf-Y2TwgQMP6FuiK4u2CpksJjzyVf2U39w/viewform"
               >
                 <ArrowRight size="2rem" /> Contact Us
               </a>
