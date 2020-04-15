@@ -5,11 +5,11 @@ const config = {
   wordPressUrl:
     activeEnv === "production"
       ? `REPLACE_SHIFTER_URL/`
-      : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:50003/",
+      : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:23941/",
   wordPressGraphQlUrl:
     activeEnv === "production"
       ? `REPLACE_SHIFTER_URL/graphql/`
-      : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:50003/graphql/",
+      : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:23941/graphql/",
 }
 
 module.exports = { config }
