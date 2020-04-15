@@ -9,18 +9,23 @@ https://twitter.com/emaildano/status/1248638563769614338?s=20
 ## Helpful Links
 
 ### Blog Post
+
 [https://www.getshifter.io/build-and-deploy-gatsby-sites-using-wordpress-shifter-netlify-and-github-actions/](https://www.getshifter.io/build-and-deploy-gatsby-sites-using-wordpress-shifter-netlify-and-github-actions/)
 
 ### Gatsby Starter Template
+
 [https://github.com/getshifter/shifter-gatsby-github-actions-starter](https://github.com/getshifter/shifter-gatsby-github-actions-starter)
 
 ### Gatsby Build on Netlify
+
 [https://shifter-gatsby-github-actions.netlify.com/](https://shifter-gatsby-github-actions.netlify.com/)
 
 ### Static WordPress site on Shifter
+
 [https://cranky-hypatia2216.on.getshifter.io/](https://cranky-hypatia2216.on.getshifter.io/)
 
 ### Shifter GitHub Actions
+
 - [https://github.com/marketplace/actions/start-shifter-wordpress](https://github.com/marketplace/actions/start-shifter-wordpress)
 - [https://github.com/marketplace/actions/stop-shifter-wordpress](https://github.com/marketplace/actions/stop-shifter-wordpress)
 

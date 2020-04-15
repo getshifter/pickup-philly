@@ -8,25 +8,10 @@ import {
   Configure,
   connectHits,
   connectHitInsights,
-  connectHighlight,
-  connectPagination,
-  Snippet,
+  // connectHighlight,
 } from "react-instantsearch-dom"
-import {
-  Container,
-  Row,
-  Col,
-  Form,
-  ListGroupItem,
-  ListGroupItemHeading,
-  ListGroupItemText,
-  ListGroup,
-  Pagination,
-  PaginationItem,
-  Button,
-} from "reactstrap"
+import { Container, Row, Col, Form, ListGroup } from "reactstrap"
 import LocationCard from "../Locations/card"
-import { createLocalLink } from "../../utils"
 
 const algoliaClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
@@ -47,7 +32,9 @@ const SearchBox = ({ currentRefinement, refine }) => {
     }
   `)
 
-  const placeholderSearchTerms = data.wpgraphql.graphql_all_location_categories.nodes.map(term => `Search ` + term.name)
+  const placeholderSearchTerms = data.wpgraphql.graphql_all_location_categories.nodes.map(
+    term => `Search ` + term.name
+  )
 
   return (
     <Form noValidate action="" role="search" className="input-group-lg mb-3">
@@ -73,27 +60,27 @@ const SearchBox = ({ currentRefinement, refine }) => {
 
 const CustomSearchBox = connectSearchBox(SearchBox)
 
-const Highlight = ({ highlight, attribute, hit }) => {
-  const parsedHit = highlight({
-    highlightProperty: "_highlightResult",
-    attribute,
-    hit,
-  })
+// const Highlight = ({ highlight, attribute, hit }) => {
+//   const parsedHit = highlight({
+//     highlightProperty: "_highlightResult",
+//     attribute,
+//     hit,
+//   })
 
-  return (
-    <span>
-      {parsedHit.map((part, index) =>
-        part.isHighlighted ? (
-          <mark key={index}>{part.value}</mark>
-        ) : (
-          <span key={index}>{part.value}</span>
-        )
-      )}
-    </span>
-  )
-}
+//   return (
+//     <span>
+//       {parsedHit.map((part, index) =>
+//         part.isHighlighted ? (
+//           <mark key={index}>{part.value}</mark>
+//         ) : (
+//           <span key={index}>{part.value}</span>
+//         )
+//       )}
+//     </span>
+//   )
+// }
 
-const CustomHighlight = connectHighlight(Highlight)
+// const CustomHighlight = connectHighlight(Highlight)
 
 const searchClient = {
   search(requests) {
@@ -143,9 +130,7 @@ class Search extends Component {
 
 const Hit = ({ hit }) => {
   console.log(hit)
-  return (
-    <LocationCard data={hit} />
-  )
+  return <LocationCard data={hit} />
 }
 
 const HitWithInsights = connectHitInsights()(Hit)

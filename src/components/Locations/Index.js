@@ -1,6 +1,6 @@
 import React from "react"
 import LocationCard from "../Locations/card"
-import Search from "../search"
+// import Search from "../search"
 
 const Locations = props => {
   const locations = props.data.wpgraphql.locations.nodes
@@ -13,7 +13,7 @@ const Locations = props => {
         </div>
       </div> */}
       <div className="position-relative list-wrapper">
-        <div className="border-top list-container pt-5">
+        <div className="list-container pt-4">
           {locations.map(location => (
             <LocationCard key={location.id} data={location} />
           ))}

@@ -63,7 +63,9 @@ export default class Map extends React.Component {
           .setLngLat(marker.geometry.coordinates)
           .setPopup(
             new mapboxgl.Popup().setHTML(
-              "<h3 class='text-center display-3'>" + marker.properties.title + "</h3>"
+              "<h3 class='text-center display-3'>" +
+                marker.properties.title +
+                "</h3>"
             )
           )
           .addTo(map)

@@ -1,23 +1,22 @@
+import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
-import {
-  Navbar,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  Container,
-  Col,
-  Row,
-} from "reactstrap"
-import InfoModal from './Modal'
-import logo from "../../images/pickupphilly-logo.png"
+import Img from "gatsby-image"
+import { Navbar, Nav, NavItem } from "reactstrap"
+import InfoModal from "./Modal"
 // import SiteMenu from "../SiteMenu"
 
 const Index = ({ location }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
+        logo: file(relativePath: { eq: "pickupphilly-logo.png" }) {
+          childImageSharp {
+            fixed(width: 175) {
+              ...GatsbyImageSharpFixed_noBase64
+            }
+          }
+        }
         site {
           siteMetadata {
             title
@@ -26,21 +25,20 @@ const Index = ({ location }) => (
       }
     `}
     render={data => (
-      <header className="bg-light border-bottom">
-        <Container fluid>
-          <Row>
-            <Col>
-              <Navbar color="light" light expand="md">
-                <NavbarBrand href="/" className ="my-3"><img src={logo} alt="logo" /></NavbarBrand>
-                <Nav className="ml-auto" navbar>
-                  <NavItem>
-                    <InfoModal buttonLabel="About"/>
-                  </NavItem>
-                </Nav>
-              </Navbar>
-            </Col>
-          </Row>
-        </Container>
+      <header className="bg-light border-bottom sticky-top w-100 z-index-1">
+        <Navbar className="py-4 px-0" color="light" light expand="md">
+          <Img
+            fixed={data.logo.childImageSharp.fixed}
+            objectFit="cover"
+            objectPosition="50% 50%"
+            alt=""
+          />
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <InfoModal buttonLabel="About" />
+            </NavItem>
+          </Nav>
+        </Navbar>
       </header>
     )}
   />

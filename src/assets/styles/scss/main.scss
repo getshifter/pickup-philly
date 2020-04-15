@@ -5,6 +5,19 @@ body {
   max-height: 100vh;
 }
 
+.layout-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.z-index-1 {
+  z-index: 1;
+}
+
 .map-container {
   height: 50vh;
   overflow: hidden;

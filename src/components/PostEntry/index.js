@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import { Link, graphql } from "gatsby"
 import PostEntryMeta from "../PostEntryMeta"
-import config from '../../../gatsby-config'
+import config from "../../../gatsby-config"
 
 const PostEntry = ({ post }) => {
   return (

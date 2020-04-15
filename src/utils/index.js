@@ -1,4 +1,4 @@
-import config from '../../gatsby-config'
+import config from "../../gatsby-config"
 
 export const createLocalLink = url => {
   if (`#` === url) {

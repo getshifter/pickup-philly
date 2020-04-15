@@ -1,5 +1,5 @@
 import React from "react"
-export const commaList = (nodes) => {
+export const commaList = nodes => {
   return (
     <div>
       {nodes.map((option, i) => (
