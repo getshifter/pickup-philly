@@ -103,10 +103,7 @@ class Search extends Component {
   render() {
     return (
       <>
-        <InstantSearch
-          searchClient={searchClient}
-          indexName="wp_posts_location"
-        >
+        <InstantSearch searchClient={searchClient} indexName="locations">
           <Configure
             clickAnalytics
             hitsPerPage={10}
@@ -121,22 +118,16 @@ class Search extends Component {
 }
 
 const Hit = ({ hit }) => {
-  console.log(hit)
-  const data = {
-    title: hit.post_title,
-    categories: [],
-    acf_location: [],
-  }
-  return <LocationCard data={data} />
+  return <LocationCard data={hit} />
 }
 
 const HitWithInsights = connectHitInsights()(Hit)
 
 const Hits = ({ hits }) => (
   <ListGroup>
-    {hits.map(hit => (
-      <HitWithInsights key={hit.objectID} hit={hit} />
-    ))}
+    {hits.map(hit => {
+      return <HitWithInsights key={hit.objectID} hit={hit} />
+    })}
   </ListGroup>
 )
 

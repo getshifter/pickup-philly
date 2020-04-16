@@ -1,18 +1,26 @@
-const activeEnv =
-  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const queries = require("./src/utils/algolia")
+const nodeEnv = process.env.NODE_ENV
+const gatsbyEnv = process.env.GATSBY_ACTIVE_ENV
+const activeEnv = gatsbyEnv || nodeEnv || "development"
 
 const config = {
-  wordPressUrl:
-    activeEnv === "production"
-      ? `REPLACE_SHIFTER_URL/`
-      : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:24916/",
-  wordPressGraphQlUrl:
-    activeEnv === "production"
-      ? `REPLACE_SHIFTER_URL/graphql/`
-      : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:24916/graphql/",
+  wordPressUrl: process.env.GATSBY_WORDPRESS_URL,
+  wordPressGraphQlUrl: process.env.GATSBY_WORDPRESS_GRAPHQL_URL,
 }
 
 module.exports = { config }
+
+console.log(
+  config,
+  process.env.NODE_ENV,
+  process.env.GATSBY_ACTIVE_ENV,
+  process.env.GATSBY_ALGOLIA_APP_ID,
+  process.env.GATSBY_WORDPRESS_GRAPHQL_URL
+)
 
 module.exports = {
   siteMetadata: {
@@ -82,5 +90,15 @@ module.exports = {
       },
     },
     "gatsby-plugin-sitemap",
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
+        queries,
+        chunkSize: 10000, // default: 1000
+      },
+    },
   ],
 }
