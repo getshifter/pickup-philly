@@ -1,15 +1,17 @@
 import React from "react"
 
-export const renderReportInfo = () => (
-  <div className="text-muted">
-    Unavailable,{" "}
-    <a
-      taget="_blank"
-      rel="noopener noreferrer"
-      href="https://docs.google.com/forms/d/e/1FAIpQLSceYKnS5BTSzN0Ym-omW-A8kUjp-9Sb0AZQ1csfXZ7_yLXAFA/viewform"
-    >
-      help us improve this
-    </a>
-    .
-  </div>
-)
+export const renderReportInfo = title => {
+  const formURL = `https://docs.google.com/forms/d/e/1FAIpQLSdAMspEfX9xsS_ZVf-Y2TwgQMP6FuiK4u2CpksJjzyVf2U39w/viewform`
+  const titleField = `entry.1695594285`
+  const params = title ? `?` + titleField + `=` + encodeURI(title) : ``
+  const url = formURL + params
+  return (
+    <div className="text-muted">
+      Unavailable,{" "}
+      <a target="_blank" rel="noopener noreferrer" href={url}>
+        help us improve this
+      </a>
+      .
+    </div>
+  )
+}

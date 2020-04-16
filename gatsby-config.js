@@ -5,11 +5,19 @@ const config = {
   wordPressUrl:
     activeEnv === "production"
       ? `REPLACE_SHIFTER_URL/`
+<<<<<<< HEAD
       : "http://pickup-philly.local/",
   wordPressGraphQlUrl:
     activeEnv === "production"
       ? `REPLACE_SHIFTER_URL/graphql/`
       : "http://pickup-philly.local/graphql/",
+=======
+      : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:46978/",
+  wordPressGraphQlUrl:
+    activeEnv === "production"
+      ? `REPLACE_SHIFTER_URL/graphql/`
+      : "https://9e99c91f-7ecf-4aa1-b77a-d18005cf4139.app.getshifter.io:46978/graphql/",
+>>>>>>> b5d816afcf7b0ba24a9186f1d542c31f1e3c2305
 }
 
 module.exports = { config }
