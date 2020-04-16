@@ -33,7 +33,7 @@ const LocationCard = props => {
   const telephone = phone ? new PhoneNumber(phone, "US") : null
 
   return (
-    <section>
+    <article>
       <Card className="mb-3">
         <CardBody className="p-0">
           <div className="p-4">
@@ -70,7 +70,7 @@ const LocationCard = props => {
           </UncontrolledCollapse>
         </CardBody>
       </Card>
-    </section>
+    </article>
   )
 }
 

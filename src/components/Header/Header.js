@@ -25,7 +25,7 @@ const Index = ({ location }) => (
       }
     `}
     render={data => (
-      <header className="bg-light border-bottom sticky-top w-100 z-index-1">
+      <header className="bg-light border-bottom w-100 z-index-1">
         <Navbar className="py-4 px-0" color="light" light expand="md">
           <Img
             fixed={data.logo.childImageSharp.fixed}

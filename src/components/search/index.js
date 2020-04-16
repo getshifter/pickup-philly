@@ -102,35 +102,32 @@ const searchClient = {
 class Search extends Component {
   render() {
     return (
-      <section className="search text-white bg-blue">
-        <Container>
-          <Row className="justify-content-md-center">
-            <Col md={10}>
-              <div className="">
-                <InstantSearch
-                  searchClient={searchClient}
-                  indexName="wp_posts_location"
-                >
-                  <Configure
-                    clickAnalytics
-                    hitsPerPage={5}
-                    attributesToSnippet={["content"]}
-                  />
-                  <CustomSearchBox />
-                  <CustomHits />
-                </InstantSearch>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      <>
+        <InstantSearch
+          searchClient={searchClient}
+          indexName="wp_posts_location"
+        >
+          <Configure
+            clickAnalytics
+            hitsPerPage={5}
+            attributesToSnippet={["content"]}
+          />
+          <CustomSearchBox />
+          <CustomHits />
+        </InstantSearch>
+      </>
     )
   }
 }
 
 const Hit = ({ hit }) => {
   console.log(hit)
-  return <LocationCard data={hit} />
+  const data = {
+    title: hit.post_title,
+    categories: [],
+    acf_location: [],
+  }
+  return <LocationCard data={data} />
 }
 
 const HitWithInsights = connectHitInsights()(Hit)
