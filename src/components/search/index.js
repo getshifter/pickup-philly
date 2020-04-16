@@ -109,7 +109,7 @@ class Search extends Component {
         >
           <Configure
             clickAnalytics
-            hitsPerPage={5}
+            hitsPerPage={10}
             attributesToSnippet={["content"]}
           />
           <CustomSearchBox />
