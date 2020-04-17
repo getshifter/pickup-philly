@@ -14,7 +14,7 @@ import LocationCard from "../Locations/card"
 
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
-  `0e200cd138313d68960f5b1ffc96b99f`
+  process.env.GATSBY_ALGOLIA_SEARCH_KEY,
 )
 
 const SearchBox = ({ currentRefinement, refine }) => {
