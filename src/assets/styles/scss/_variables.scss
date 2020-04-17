@@ -10,6 +10,7 @@ $dark: $gray-800 !default;
 $light: $gray-100 !default;
 $green: #00a18a !default;
 $primary: $green !default;
+$black: #000 !default;
 
 // Components
 //
@@ -113,5 +114,9 @@ $card-cap-bg: $light !default;
 $card-border-color: $border-color !default;
 
 // Forms
+$input-focus-box-shadow: none;
+$input-focus-border-color: none;
+$input-border-color: $black !default;
 $input-border-radius: $rounded-pill !default;
 $btn-border-radius-sm: $rounded-pill !default;
+$input-border-radius: $rounded-pill !default;

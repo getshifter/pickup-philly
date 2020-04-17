@@ -1,6 +1,4 @@
 import React, { Component } from "react"
-import Typed from "react-typed"
-import { useStaticQuery, graphql } from "gatsby"
 import algoliasearch from "algoliasearch/lite"
 import {
   InstantSearch,
@@ -10,7 +8,14 @@ import {
   connectHitInsights,
   connectMenu,
 } from "react-instantsearch-dom"
-import { Form, Button } from "reactstrap"
+import {
+  Form,
+  Button,
+  Input,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+} from "reactstrap"
 import LocationCard from "../Locations/card"
 
 const searchClient = algoliasearch(
@@ -21,46 +26,14 @@ const searchClient = algoliasearch(
 class Search extends Component {
   render() {
     const SearchBox = ({ currentRefinement, refine }) => {
-      const data = useStaticQuery(graphql`
-        query LOCATION_CATEGORIES {
-          wpgraphql {
-            graphql_all_location_categories {
-              nodes {
-                name
-                id
-              }
-            }
-          }
-        }
-      `)
-
-      const placeholderSearchTerms = data.wpgraphql.graphql_all_location_categories.nodes.map(
-        term => `Search ` + term.name
-      )
-
       return (
-        <Form
-          noValidate
-          action=""
-          role="search"
-          className="input-group-lg mb-3"
-        >
-          <Typed
-            strings={placeholderSearchTerms}
-            typeSpeed={175}
-            backSpeed={150}
-            attr="placeholder"
-            loop
-            smartBackspace
-          >
-            <input
-              type="search"
-              className="form-control"
-              value={currentRefinement}
-              placeholder="Search Pickup Philly"
-              onChange={event => refine(event.currentTarget.value)}
-            />
-          </Typed>
+        <Form noValidate action="" role="search" className="mb-3">
+          <Input
+            type="search"
+            value={currentRefinement}
+            placeholder="Search Pickup Philly"
+            onChange={event => refine(event.currentTarget.value)}
+          />
         </Form>
       )
     }
@@ -95,18 +68,18 @@ class Search extends Component {
     const Menu = ({ items, refine }) => (
       <div className="d-flex flex-wrap align-items-center justify-content-center pb-4">
         {items.map(item => (
-            <Button
+          <Button
             className="m-2"
             size="sm"
-              pill
-              color={item.isRefined ? "primary" : "outline-primary"}
-              onClick={event => {
-                event.preventDefault()
-                refine(item.value)
-              }}
-            >
-              {item.label}
-            </Button>
+            pill
+            color={item.isRefined ? "primary" : "outline-primary"}
+            onClick={event => {
+              event.preventDefault()
+              refine(item.value)
+            }}
+          >
+            {item.label}
+          </Button>
         ))}
       </div>
     )
