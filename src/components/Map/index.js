@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import "mapbox-gl/dist/mapbox-gl.css"
 import "./style.scss"
 
-mapboxgl.accessToken = `pk.eyJ1IjoiZW1haWxkYW5vIiwiYSI6ImNqc2NiMGY1NDBpenQ0NW8zdjYxNTN1cGIifQ.O6pJTTir0UYZMLT62elQPw`
+mapboxgl.accessToken = process.env.GATSBY_MAPBOX_API_TOKEN
 
 export default class Map extends React.Component {
   constructor(props) {
