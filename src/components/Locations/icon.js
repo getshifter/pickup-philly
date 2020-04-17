@@ -1,12 +1,10 @@
 import React from "react"
 import { UncontrolledTooltip } from "reactstrap"
-import {
-  Phone,
-  Globe,
-  ChevronDown,
-  Heart,
-  Smartphone,
-} from "@styled-icons/feather"
+import { Phone } from "@styled-icons/feather/Phone"
+import { Globe } from "@styled-icons/feather/Globe"
+import { ChevronDown } from "@styled-icons/feather/ChevronDown"
+import { Heart } from "@styled-icons/feather/Heart"
+import { Smartphone } from "@styled-icons/feather/Smartphone"
 
 export const renderIcon = icon => {
   switch (icon) {
