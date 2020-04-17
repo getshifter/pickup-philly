@@ -27,7 +27,6 @@ const Index = ({ location }) => (
     render={data => (
       <header className="bg-light border-bottom w-100 z-index-1">
         <Navbar className="py-4 px-0" color="light" light expand="md">
-          {console.log(data)}
           <Img
             fixed={data.logo.childImageSharp.fixed}
             objectFit="cover"

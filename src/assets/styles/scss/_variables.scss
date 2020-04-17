@@ -11,6 +11,14 @@ $light: $gray-100 !default;
 $green: #00a18a !default;
 $primary: $green !default;
 
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$border-width: 1px !default;
+$border-color: $gray-300 !default;
+$rounded-pill: 50rem !default;
+
 // Navbar
 $navbar-light-hover-color: rgba($green, 0.7) !default;
 $navbar-light-active-color: $green !default;
@@ -40,6 +48,19 @@ $display4-size: 1.25rem;
 
 $enable-responsive-font-size: true;
 
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-border-width: 2px;
+$input-btn-padding-x-sm: 1rem !default;
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-border-radius: $rounded-pill !default;
+
 // Body
 //
 // Settings for the `<body>` element.
@@ -47,7 +68,7 @@ $enable-responsive-font-size: true;
 $body-bg: $light !default;
 $body-color: #2f2d1b !default;
 
-// Border Radius 
+// Border Radius
 $border-radius: 0 !default;
 $border-radius-lg: 0 !default;
 
@@ -68,7 +89,7 @@ $badge-pill-padding-x: 1.25em !default;
 
 // Modals
 $modal-backdrop-bg: $light !default;
-$modal-backdrop-opacity: .85 !default;
+$modal-backdrop-opacity: 0.85 !default;
 $modal-content-bg: $green !default;
 $modal-dialog-margin-sm-up: 3rem !default;
 $modal-dialog-padding-sm-up: 5rem !default;
@@ -85,14 +106,6 @@ $close-font-weight: 100 !default;
 $close-color: $gray-100 !default;
 $close-text-shadow: none !default;
 
-// Components
-//
-// Define common padding and border radius sizes and more.
-
-$border-width: 1px !default;
-$border-color: $gray-300 !default;
-$rounded-pill: 50rem !default;
-
 // Cards
 
 $card-bg: $light !default;
@@ -101,3 +114,4 @@ $card-border-color: $border-color !default;
 
 // Forms
 $input-border-radius: $rounded-pill !default;
+$btn-border-radius-sm: $rounded-pill !default;

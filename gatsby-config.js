@@ -23,14 +23,6 @@ const config = {
 
 module.exports = { config }
 
-console.log(
-  config,
-  process.env.NODE_ENV,
-  process.env.GATSBY_ACTIVE_ENV,
-  process.env.GATSBY_ALGOLIA_APP_ID,
-  process.env.GATSBY_WORDPRESS_GRAPHQL_URL
-)
-
 module.exports = {
   siteMetadata: {
     title: "Pickup Philly",
