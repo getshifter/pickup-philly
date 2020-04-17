@@ -18,7 +18,7 @@ const config = {
       : process.env.GATSBY_WORDPRESS_GRAPHQL_URL,
   algoliaAppId: process.env.GATSBY_ALGOLIA_APP_ID,
   algoliaIndexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
-  algoliaAdminKey: process.env.ALGOLIA_ADMIN_KEY,
+  algoliaAdminKey: process.env.GATSBY_ALGOLIA_ADMIN_KEY,
 }
 
 module.exports = { config }
@@ -81,7 +81,7 @@ module.exports = {
         background_color: "#f0f2f5",
         theme_color: "#001529",
         display: "minimal-ui",
-        icon: "src/images/pickup-logo-icon.png",
+        icon: "src/images/pickupphilly-icon.png",
       },
     },
     {
