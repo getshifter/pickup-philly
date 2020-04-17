@@ -19,7 +19,7 @@ const config = {
       : process.env.GATSBY_WORDPRESS_GRAPHQL_URL,
   algoliaAppId: process.env.GATSBY_ALGOLIA_APP_ID,
   algoliaIndexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
-  algoliaAdminKey: `00ad2b04cb944b2a33befad5e4ac802e`,
+  algoliaAdminKey: process.env.GATSBY_ALGOLIA_ADMIN_KEY,
 }
 
 module.exports = { config }
