@@ -8,9 +8,8 @@ import {
   Configure,
   connectHits,
   connectHitInsights,
-  // connectHighlight,
 } from "react-instantsearch-dom"
-import { Container, Row, Col, Form, ListGroup } from "reactstrap"
+import { Form } from "reactstrap"
 import LocationCard from "../Locations/card"
 
 const algoliaClient = algoliasearch(
@@ -20,7 +19,7 @@ const algoliaClient = algoliasearch(
 
 const SearchBox = ({ currentRefinement, refine }) => {
   const data = useStaticQuery(graphql`
-    query {
+    query LOCATION_CATEGORIES {
       wpgraphql {
         graphql_all_location_categories {
           nodes {
@@ -40,8 +39,8 @@ const SearchBox = ({ currentRefinement, refine }) => {
     <Form noValidate action="" role="search" className="input-group-lg mb-3">
       <Typed
         strings={placeholderSearchTerms}
-        typeSpeed={150}
-        backSpeed={100}
+        typeSpeed={200}
+        backSpeed={200}
         attr="placeholder"
         loop
         smartBackspace
@@ -59,28 +58,6 @@ const SearchBox = ({ currentRefinement, refine }) => {
 }
 
 const CustomSearchBox = connectSearchBox(SearchBox)
-
-// const Highlight = ({ highlight, attribute, hit }) => {
-//   const parsedHit = highlight({
-//     highlightProperty: "_highlightResult",
-//     attribute,
-//     hit,
-//   })
-
-//   return (
-//     <span>
-//       {parsedHit.map((part, index) =>
-//         part.isHighlighted ? (
-//           <mark key={index}>{part.value}</mark>
-//         ) : (
-//           <span key={index}>{part.value}</span>
-//         )
-//       )}
-//     </span>
-//   )
-// }
-
-// const CustomHighlight = connectHighlight(Highlight)
 
 const searchClient = {
   search(requests) {
@@ -101,36 +78,44 @@ const searchClient = {
 
 class Search extends Component {
   render() {
+    const Hit = ({ hit }) => {
+      return <LocationCard data={hit} />
+    }
+
+    const HitWithInsights = connectHitInsights()(Hit)
+
+    const allLocations = props => {
+      const locations = this.props.data
+      return locations.map(location => {
+        return <LocationCard key={location.id} data={location} />
+      })
+    }
+
+    const Hits = ({ hits }) => (
+      <>
+        {hits.length
+          ? hits.map(hit => {
+              return <HitWithInsights key={hit.objectID} hit={hit} />
+            })
+          : allLocations()}
+      </>
+    )
+
+    const CustomHits = connectHits(Hits)
     return (
       <>
         <InstantSearch searchClient={searchClient} indexName="locations">
           <Configure
             clickAnalytics
             hitsPerPage={10}
-            attributesToSnippet={["content"]}
+            attributesToSnippet={["title"]}
           />
           <CustomSearchBox />
-          <CustomHits />
+          <CustomHits data={this.props.data} />
         </InstantSearch>
       </>
     )
   }
 }
-
-const Hit = ({ hit }) => {
-  return <LocationCard data={hit} />
-}
-
-const HitWithInsights = connectHitInsights()(Hit)
-
-const Hits = ({ hits }) => (
-  <ListGroup>
-    {hits.map(hit => {
-      return <HitWithInsights key={hit.objectID} hit={hit} />
-    })}
-  </ListGroup>
-)
-
-const CustomHits = connectHits(Hits)
 
 export default Search
