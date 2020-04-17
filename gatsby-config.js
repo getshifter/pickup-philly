@@ -102,7 +102,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
-        appId: `XJQYEHQUP4`,
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: `00ad2b04cb944b2a33befad5e4ac802e`,
         indexName: `locations`,
         queries,

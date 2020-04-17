@@ -13,7 +13,7 @@ import { Form } from "reactstrap"
 import LocationCard from "../Locations/card"
 
 const searchClient = algoliasearch(
-  `XJQYEHQUP4`,
+  process.env.GATSBY_ALGOLIA_APP_ID,
   `0e200cd138313d68960f5b1ffc96b99f`
 )
 
