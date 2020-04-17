@@ -85,9 +85,12 @@ class Search extends Component {
           searchClient={searchClient}
           indexName={process.env.GATSBY_ALGOLIA_INDEX_NAME}
         >
-          <Configure clickAnalytics hitsPerPage={1000} />
+          <Configure
+            clickAnalytics
+            hitsPerPage={1000}
+          />
           <CustomSearchBox />
-          <CustomMenu attribute="categories.nodes.name"  defaultRefinement="instant_search" />
+          <CustomMenu attribute="categories.nodes.name" />
           <CustomHits data={this.props.data} />
         </InstantSearch>
       </>
