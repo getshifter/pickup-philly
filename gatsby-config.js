@@ -16,9 +16,9 @@ const config = {
     activeEnv === "production"
       ? `REPLACE_SHIFTER_URL/graphql/`
       : process.env.GATSBY_WORDPRESS_GRAPHQL_URL,
-  algoliaAppId: `XJQYEHQUP4`,
-  algoliaIndexName: `locations`,
-  algoliaAdminKey: `00ad2b04cb944b2a33befad5e4ac802e`,
+  algoliaAppId: process.env.GATSBY_ALGOLIA_APP_ID,
+  algoliaIndexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+  algoliaAdminKey: process.env.ALGOLIA_ADMIN_KEY,
 }
 
 module.exports = { config }
