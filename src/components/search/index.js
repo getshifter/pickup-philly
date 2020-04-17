@@ -8,14 +8,7 @@ import {
   connectHitInsights,
   connectMenu,
 } from "react-instantsearch-dom"
-import {
-  Form,
-  Button,
-  Input,
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText,
-} from "reactstrap"
+import { Form, Button, Input } from "reactstrap"
 import LocationCard from "../Locations/card"
 
 const searchClient = algoliasearch(
@@ -88,14 +81,13 @@ class Search extends Component {
 
     return (
       <>
-        <InstantSearch searchClient={searchClient} indexName="locations">
-          <Configure
-            clickAnalytics
-            hitsPerPage={10}
-            attributesToSnippet={["title"]}
-          />
+        <InstantSearch
+          searchClient={searchClient}
+          indexName={process.env.GATSBY_ALGOLIA_INDEX_NAME}
+        >
+          <Configure clickAnalytics hitsPerPage={1000} />
           <CustomSearchBox />
-          <CustomMenu attribute="categories.nodes.name" />
+          <CustomMenu attribute="categories.nodes.name"  defaultRefinement="instant_search" />
           <CustomHits data={this.props.data} />
         </InstantSearch>
       </>
