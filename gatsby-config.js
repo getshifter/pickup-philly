@@ -9,14 +9,8 @@ const gatsbyEnv = process.env.GATSBY_ACTIVE_ENV
 const activeEnv = gatsbyEnv || nodeEnv || "development"
 
 const config = {
-  wordPressUrl:
-    activeEnv === "production"
-      ? `REPLACE_SHIFTER_URL/`
-      : process.env.GATSBY_WORDPRESS_URL,
-  wordPressGraphQlUrl:
-    activeEnv === "production"
-      ? `REPLACE_SHIFTER_URL/graphql/`
-      : process.env.GATSBY_WORDPRESS_GRAPHQL_URL,
+  wordPressUrl: process.env.GATSBY_WORDPRESS_URL,
+  wordPressGraphQlUrl: process.env.GATSBY_WORDPRESS_GRAPHQL_URL,
   algoliaAppId: process.env.GATSBY_ALGOLIA_APP_ID,
   algoliaIndexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
   algoliaAdminKey: process.env.GATSBY_ALGOLIA_ADMIN_KEY,
@@ -103,9 +97,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
-        appId: config.algoliaAppId,
-        apiKey: config.algoliaAdminKey,
-        indexName: config.algoliaIndexName,
+        appId: `XJQYEHQUP4`,
+        apiKey: `00ad2b04cb944b2a33befad5e4ac802e`,
+        indexName: `locations`,
         queries,
         chunkSize: 10000, // default: 1000
       },
