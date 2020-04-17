@@ -12,7 +12,7 @@ import {
 import { Form } from "reactstrap"
 import LocationCard from "../Locations/card"
 
-const algoliaClient = algoliasearch(
+const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
   process.env.GATSBY_ALGOLIA_SEARCH_KEY
 )
@@ -59,23 +59,6 @@ const SearchBox = ({ currentRefinement, refine }) => {
 
 const CustomSearchBox = connectSearchBox(SearchBox)
 
-const searchClient = {
-  search(requests) {
-    if (requests.every(({ params }) => !params.query)) {
-      return Promise.resolve({
-        results: requests.map(() => ({
-          hits: [],
-          nbHits: 0,
-          nbPages: 0,
-          processingTimeMS: 0,
-        })),
-      })
-    }
-
-    return algoliaClient.search(requests)
-  },
-}
-
 class Search extends Component {
   render() {
     const Hit = ({ hit }) => {
@@ -104,7 +87,7 @@ class Search extends Component {
     const CustomHits = connectHits(Hits)
     return (
       <>
-        <InstantSearch searchClient={searchClient} indexName="locations">
+        <InstantSearch searchClient={searchClient} indexName={process.env.GATSBY_ALGOLIA_INDEX_NAME}>
           <Configure
             clickAnalytics
             hitsPerPage={10}
