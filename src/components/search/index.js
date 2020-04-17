@@ -47,8 +47,8 @@ class Search extends Component {
         >
           <Typed
             strings={placeholderSearchTerms}
-            typeSpeed={200000}
-            backSpeed={200000}
+            typeSpeed={175}
+            backSpeed={150}
             attr="placeholder"
             loop
             smartBackspace
