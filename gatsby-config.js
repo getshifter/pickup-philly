@@ -3,6 +3,7 @@ require("dotenv").config({
 })
 
 const queries = require("./src/utils/algolia")
+
 const nodeEnv = process.env.NODE_ENV
 const gatsbyEnv = process.env.GATSBY_ACTIVE_ENV
 const activeEnv = gatsbyEnv || nodeEnv || "development"
