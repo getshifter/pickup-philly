@@ -30,7 +30,7 @@ jobs:
       env:
         GATSBY_ALGOLIA_APP_ID: ${{ secrets.GATSBY_ALGOLIA_APP_ID }}
         GATSBY_ALGOLIA_INDEX_NAME: ${{ secrets.GATSBY_ALGOLIA_INDEX_NAME }}
-        ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+        GATSBY_ALGOLIA_ADMIN_KEY: ${{ secrets.GATSBY_ALGOLIA_ADMIN_KEY }}
     - name: Deploy to netlify
       uses: netlify/actions/cli@master
       env:
