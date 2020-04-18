@@ -1,29 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import algoliasearch from "algoliasearch/lite"
-import {
-  InstantSearch,
-  Configure,
-  connectSearchBox,
-  connectHits,
-  connectHitInsights,
-  connectMenu,
-} from "react-instantsearch-dom"
-import {
-  GoogleMapsLoader,
-  GeoSearch,
-  Control,
-  Marker,
-  CustomMarker,
-} from "react-instantsearch-dom-maps"
-import { Form, Button, Input, Row, Col } from "reactstrap"
-import LocationCard from "../Locations/card"
-import Header from "../Header/Header"
-
-const searchClient = algoliasearch(
-  process.env.GATSBY_ALGOLIA_APP_ID,
-  process.env.GATSBY_ALGOLIA_SEARCH_KEY
-)
+import { GeoSearch, Marker } from "react-instantsearch-dom-maps"
 
 class Map extends Component {
   static propTypes = {

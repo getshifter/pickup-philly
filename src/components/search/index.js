@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import PropTypes from "prop-types"
 import algoliasearch from "algoliasearch/lite"
 import {
   InstantSearch,
@@ -9,15 +8,9 @@ import {
   connectHitInsights,
   connectMenu,
 } from "react-instantsearch-dom"
-import {
-  GoogleMapsLoader,
-  GeoSearch,
-  Control,
-  Marker,
-  CustomMarker,
-} from "react-instantsearch-dom-maps"
+import { GoogleMapsLoader } from "react-instantsearch-dom-maps"
 import { Form, Button, Input, Row, Col } from "reactstrap"
-import Map from './map'
+import Map from "./map"
 import LocationCard from "../Locations/card"
 import Header from "../Header/Header"
 
@@ -25,47 +18,6 @@ const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
   process.env.GATSBY_ALGOLIA_SEARCH_KEY
 )
-
-class LocationMap extends Component {
-  static propTypes = {
-    google: PropTypes.object.isRequired,
-  }
-
-  InfoWindow = new this.props.google.maps.InfoWindow()
-
-  onClickMarker = ({ hit, marker }) => {
-    if (this.InfoWindow.getMap()) {
-      this.InfoWindow.close()
-    }
-
-    this.InfoWindow.setContent(hit.title)
-    this.InfoWindow.open(marker.getMap(), marker)
-  }
-
-  renderGeoHit = hit => (
-    <Marker
-      key={hit.objectID}
-      hit={hit}
-      anchor={{ x: 0, y: 5 }}
-      onClick={({ marker }) => {
-        this.onClickMarker({
-          hit,
-          marker,
-        })
-      }}
-    />
-  )
-
-  render() {
-    const { google } = this.props
-
-    return (
-      <GeoSearch google={google}>
-        {({ hits }) => <>{hits.map(this.renderGeoHit)}</>}
-      </GeoSearch>
-    )
-  }
-}
 
 class Search extends Component {
   render() {
@@ -124,43 +76,25 @@ class Search extends Component {
     const CustomMenu = connectMenu(Menu)
 
     return (
-      <>
-        <InstantSearch
-          searchClient={searchClient}
-          indexName={process.env.GATSBY_ALGOLIA_INDEX_NAME}
-        >
-          <Configure clickAnalytics hitsPerPage={1000} />
-          <Row>
-            <Col className="d-none d-md-block">
-              <div style={{ height: `100%` }}>
-                <GoogleMapsLoader
-                  apiKey={process.env.GATSBY_GOOGLE_MAPS_API_KEY}
-                >
-                  {/* {google => (
-                    <GeoSearch google={google}>
-                      {({ hits }) => (
-                        <div>
-                          <Control />
-                          {hits.map(hit => (
-                            <Marker key={hit.objectID} hit={hit} />
-                          ))}
-                        </div>
-                      )}
-                    </GeoSearch>
-                  )} */}
-                  {google => <Map google={google} />}
-                </GoogleMapsLoader>
-              </div>
-            </Col>
-            <Col>
-              <Header />
-              <CustomSearchBox />
-              <CustomMenu attribute="categories.nodes.name" />
-              <CustomHits data={this.props.data} />
-            </Col>
-          </Row>
-        </InstantSearch>
-      </>
+      <InstantSearch
+        searchClient={searchClient}
+        indexName={process.env.GATSBY_ALGOLIA_INDEX_NAME}
+      >
+        <Configure clickAnalytics hitsPerPage={1000} />
+        <Row>
+          <Col className="d-none d-md-block">
+            <GoogleMapsLoader apiKey={process.env.GATSBY_GOOGLE_MAPS_API_KEY}>
+              {google => <Map google={google} />}
+            </GoogleMapsLoader>
+          </Col>
+          <Col>
+            <Header />
+            <CustomSearchBox />
+            <CustomMenu attribute="categories.nodes.name" />
+            <CustomHits data={this.props.data} />
+          </Col>
+        </Row>
+      </InstantSearch>
     )
   }
 }

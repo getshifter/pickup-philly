@@ -4,12 +4,10 @@ import { Container } from "reactstrap"
 import "../assets/styles/scss/main.scss"
 
 const Layout = ({ primaryContent, secondaryContent, location }) => (
-  <>
+  <Container fluid className="layout-wrapper">
     <Helmet />
-    <Container fluid className="layout-wrapper">
-      {primaryContent}
-    </Container>
-  </>
+    {primaryContent}
+  </Container>
 )
 
 export default Layout
