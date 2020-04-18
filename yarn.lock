@@ -8516,6 +8516,11 @@ lcid@^2.0.0:
   dependencies:
     invert-kv "^2.0.0"
 
+leaflet@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.6.0.tgz#aecbb044b949ec29469eeb31c77a88e2f448f308"
+  integrity sha512-CPkhyqWUKZKFJ6K8umN5/D2wrJ2+/8UIpXppY7QDnUZW5bZL5+SEI2J7GBpwh4LIupOKqbNSQXgqmrEJopHVNQ==
+
 leven@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/leven/-/leven-2.1.0.tgz#c2e7a9f772094dee9d34202ae8acce4687875580"
@@ -11227,6 +11232,15 @@ react-instantsearch-core@^6.4.0:
     prop-types "^15.5.10"
     react-fast-compare "^3.0.0"
 
+react-instantsearch-dom-maps@^6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/react-instantsearch-dom-maps/-/react-instantsearch-dom-maps-6.4.0.tgz#e44af036d58e498229e422a61b2154976fdc95db"
+  integrity sha512-1/ck5FmWUifxXOM5iBgUP+N0lM0CC5yw1z9B5gQ435pEkJgdAgJr00zsgxGgSXTzF2g8XWYbfQPitheTs2m+Vw==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    prop-types "^15.5.10"
+    scriptjs "^2.5.8"
+
 react-instantsearch-dom@^6.4.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/react-instantsearch-dom/-/react-instantsearch-dom-6.4.0.tgz#61c7e453652136ebc549e6427e2dab7d57519f07"
@@ -11943,6 +11957,11 @@ schema-utils@^2.6.5:
   dependencies:
     ajv "^6.12.0"
     ajv-keywords "^3.4.1"
+
+scriptjs@^2.5.8:
+  version "2.5.9"
+  resolved "https://registry.yarnpkg.com/scriptjs/-/scriptjs-2.5.9.tgz#343915cd2ec2ed9bfdde2b9875cd28f59394b35f"
+  integrity sha512-qGVDoreyYiP1pkQnbnFAUIS5AjenNwwQBdl7zeos9etl+hYKWahjRTfzAZZYBv5xNHx7vNKCmaLDQZ6Fr2AEXg==
 
 scroll-behavior@^0.9.12:
   version "0.9.12"
