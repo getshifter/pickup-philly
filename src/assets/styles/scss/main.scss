@@ -41,12 +41,13 @@ body {
   overflow-y: scroll;
 }
 
-.list-container {
-  overflow-y: scroll;
-}
-
 .modal__header-aboutlink {
   &:hover {
     cursor: pointer !important;
   }
+}
+
+// Algolia Map
+.ais-GeoSearch-map {
+  min-height: 100vh;
 }

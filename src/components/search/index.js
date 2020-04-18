@@ -8,8 +8,15 @@ import {
   connectHitInsights,
   connectMenu,
 } from "react-instantsearch-dom"
-import { Form, Button, Input } from "reactstrap"
+import {
+  GoogleMapsLoader,
+  GeoSearch,
+  Control,
+  Marker,
+} from "react-instantsearch-dom-maps"
+import { Form, Button, Input, Row, Col } from "reactstrap"
 import LocationCard from "../Locations/card"
+import Header from "../Header/Header"
 
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
@@ -39,21 +46,14 @@ class Search extends Component {
 
     const HitWithInsights = connectHitInsights()(Hit)
 
-    const allLocations = props => {
-      const locations = this.props.data
-      return locations.map(location => {
-        return <LocationCard key={location.id} data={location} />
-      })
-    }
-
     const Hits = ({ hits }) => (
-      <>
-        {hits.length
-          ? hits.map(hit => {
-              return <HitWithInsights key={hit.objectID} hit={hit} />
-            })
-          : allLocations()}
-      </>
+      <div className="list-wrapper">
+        <div className="list-container">
+          {hits.map(hit => {
+            return <HitWithInsights key={hit.objectID} hit={hit} />
+          })}
+        </div>
+      </div>
     )
 
     const CustomHits = connectHits(Hits)
@@ -85,13 +85,35 @@ class Search extends Component {
           searchClient={searchClient}
           indexName={process.env.GATSBY_ALGOLIA_INDEX_NAME}
         >
-          <Configure
-            clickAnalytics
-            hitsPerPage={1000}
-          />
-          <CustomSearchBox />
-          <CustomMenu attribute="categories.nodes.name" />
-          <CustomHits data={this.props.data} />
+          <Configure clickAnalytics hitsPerPage={1000} />
+          <Row>
+            <Col className="d-none d-md-block">
+              <div style={{ height: `100%` }}>
+                <GoogleMapsLoader
+                  apiKey={process.env.GATSBY_GOOGLE_MAPS_API_KEY}
+                >
+                  {google => (
+                    <GeoSearch google={google}>
+                      {({ hits }) => (
+                        <div>
+                          <Control />
+                          {hits.map(hit => (
+                            <Marker key={hit.objectID} hit={hit} />
+                          ))}
+                        </div>
+                      )}
+                    </GeoSearch>
+                  )}
+                </GoogleMapsLoader>
+              </div>
+            </Col>
+            <Col>
+              <Header />
+              <CustomSearchBox />
+              <CustomMenu attribute="categories.nodes.name" />
+              <CustomHits data={this.props.data} />
+            </Col>
+          </Row>
         </InstantSearch>
       </>
     )
