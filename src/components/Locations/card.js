@@ -34,42 +34,44 @@ const LocationCard = props => {
 
   return (
     <article>
-      <Card className="mb-3">
-        <CardBody className="p-0">
-          <div className="p-4">
-            <h2
-              className="display-3"
-              dangerouslySetInnerHTML={{ __html: title }}
-            />
-            <div className="mt-3 mb-4">
-              {renderCategories(categories.nodes)}
-            </div>
-            <Row className="d-flex justify-content-between mb-4">
-              {renderWebsite(website)}
-              {renderPhone(telephone)}
-            </Row>
-            <Row>
-              {renderFulfillment(fulfillmentOptions, title)}
-              {renderOrdering(orderingOptions, title)}
-            </Row>
-          </div>
-          <div className="text-right border-top">
-            <Button color="link" id={id}>
-              More Info {renderIcon("chevron-down")}
-            </Button>
-          </div>
-          <UncontrolledCollapse toggler={`${id}`}>
+      <div href="#" id={id}>
+        <Card className="mb-3">
+          <CardBody className="p-0">
             <div className="p-4">
-              <Row className="mb-4">
-                {renderPayment(paymentOptions, title)}
-                {renderHours(hours, title)}
+              <h2
+                className="display-3"
+                dangerouslySetInnerHTML={{ __html: title }}
+              />
+              <div className="mt-3 mb-4">
+                {renderCategories(categories.nodes)}
+              </div>
+              <Row className="d-flex justify-content-between mb-4">
+                {renderWebsite(website)}
+                {renderPhone(telephone)}
               </Row>
-              {renderAdditionalInfo(availabilityNotes)}
-              {renderEmployeeRelief(employeeReliefFund)}
+              <Row>
+                {renderFulfillment(fulfillmentOptions, title)}
+                {renderOrdering(orderingOptions, title)}
+              </Row>
             </div>
-          </UncontrolledCollapse>
-        </CardBody>
-      </Card>
+            <div className="text-right border-top">
+              <Button color="link" id={id}>
+                More Info {renderIcon("chevron-down")}
+              </Button>
+            </div>
+            <UncontrolledCollapse toggler={`${id}`}>
+              <div className="p-4">
+                <Row className="mb-4">
+                  {renderPayment(paymentOptions, title)}
+                  {renderHours(hours, title)}
+                </Row>
+                {renderAdditionalInfo(availabilityNotes)}
+                {renderEmployeeRelief(employeeReliefFund)}
+              </div>
+            </UncontrolledCollapse>
+          </CardBody>
+        </Card>
+      </div>
     </article>
   )
 }
