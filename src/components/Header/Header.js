@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import { Navbar, Nav, NavItem } from "reactstrap"
 import InfoModal from "./Modal"
-// import SiteMenu from "../SiteMenu"
 
 const Index = ({ location }) => (
   <StaticQuery
@@ -25,8 +24,8 @@ const Index = ({ location }) => (
       }
     `}
     render={data => (
-      <header className="bg-light border-bottom w-100 z-index-1">
-        <Navbar className="py-4 px-0" color="light" light expand="md">
+      <header>
+        <Navbar className="py-4 px-0" color="light" light>
           <Img
             fixed={data.logo.childImageSharp.fixed}
             objectFit="cover"
