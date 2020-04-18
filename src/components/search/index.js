@@ -45,6 +45,9 @@ class Search extends Component {
     const Hits = ({ hits }) => (
       <div className="list-wrapper">
         <div className="list-container">
+          <Header />
+          <CustomSearchBox />
+          <CustomMenu attribute="categories.nodes.name" />
           {hits.map(hit => {
             return <HitWithInsights key={hit.objectID} hit={hit} />
           })}
@@ -88,9 +91,6 @@ class Search extends Component {
             </GoogleMapsLoader>
           </Col>
           <Col>
-            <Header />
-            <CustomSearchBox />
-            <CustomMenu attribute="categories.nodes.name" />
             <CustomHits data={this.props.data} />
           </Col>
         </Row>
