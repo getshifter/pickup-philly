@@ -47,7 +47,7 @@ class Search extends Component {
         <div className="list-container">
           <Header />
           <CustomSearchBox />
-          <CustomMenu attribute="categories.nodes.name" />
+          <CustomMenu limit={25} attribute="categories.nodes.name" />
           {hits.map(hit => {
             return <HitWithInsights key={hit.objectID} hit={hit} />
           })}
