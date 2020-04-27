@@ -68,7 +68,7 @@ const InfoModal = props => {
           outbreak, including information on how to shop, modified hours of
           operation, and more.
         </ModalBody>
-        <ModalFooter className="pt-5 justify-content-between display-3 align-items-start text-sm-left">
+        <ModalFooter className="pt-5 d-block d-sm-flex justify-content-between display-4 display-sm-3 align-items-start text-sm-left">
           <div>
             <div>
               <a
@@ -78,7 +78,7 @@ const InfoModal = props => {
                 <ArrowRight size="2rem" /> Submit your Business
               </a>
             </div>
-            <div>
+            <div className="mt-3 mt-sm-0">
               <a
                 className="text-white"
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdAMspEfX9xsS_ZVf-Y2TwgQMP6FuiK4u2CpksJjzyVf2U39w/viewform"
@@ -87,8 +87,8 @@ const InfoModal = props => {
               </a>
             </div>
           </div>
-          <div className="text-right">
-            <a className="text-white" href="https://twitter.com/pickupphilly">
+          <div className="text-left text-sm-right mt-3 mt-sm-0">
+            <a className="text-white mt-sm-0" href="https://twitter.com/pickupphilly">
               <Twitter size="2rem" />
             </a>
           </div>
