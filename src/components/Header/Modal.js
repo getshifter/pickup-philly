@@ -62,13 +62,13 @@ const InfoModal = props => {
             alt=""
           />
         </ModalHeader>
-        <ModalBody className="px-sm-5 px-xs-0 pb-5 text-light display-4 display-sm-2">
+        <ModalBody className="px-sm-5 px-xs-0 pb-5 text-light display-2">
           Pickup Philly is an open source business directory to help connect
           essential services with their customers during the coronavirus
           outbreak, including information on how to shop, modified hours of
           operation, and more.
         </ModalBody>
-        <ModalFooter className="pt-5 d-block d-sm-flex justify-content-between display-4 display-sm-3 align-items-start text-sm-left">
+        <ModalFooter className="pt-5 d-block d-sm-flex justify-content-between display-3 align-items-start text-sm-left">
           <div>
             <div>
               <a

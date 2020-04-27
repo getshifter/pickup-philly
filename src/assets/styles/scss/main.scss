@@ -76,3 +76,15 @@ body {
 .modal__sponsorlogos {
   padding: 2rem;
 }
+
+//Responsive Type
+
+@include media-breakpoint-down(sm) {
+  .display-2 {
+    font-size: 1.2rem;
+  }
+  .display-3 {
+    font-size: 1.2rem;
+  }
+}
+
