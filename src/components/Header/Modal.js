@@ -15,7 +15,7 @@ const InfoModal = props => {
     query {
       logo: file(relativePath: { eq: "pickpuphilly-logo-light.png" }) {
         childImageSharp {
-          fixed(width: 200) {
+          fixed(width: 150) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -95,13 +95,12 @@ const InfoModal = props => {
   
         </ModalFooter>
         <div className="display-4 border-top border-light w-100 p-5 d-flex justify-content-between align-items-start">
-          <div className="small text-light align-text-bottom">Proudly Sponsored by</div>
+          <div className="small text-light mt-2">Proudly Sponsored by</div>
           <div>
           <a href="https://phillylovesbeer.org/">
            <Img
             fixed={data.plb.childImageSharp.fixed}
             alt=""
-            className="my-auto"
           />
           </a>
           <a href="https://www.getshifter.io/">
