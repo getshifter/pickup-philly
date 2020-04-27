@@ -101,19 +101,20 @@ const InfoModal = props => {
            <Img
             fixed={data.plb.childImageSharp.fixed}
             alt=""
+            className="opacity-70"
           />
           </a>
           <a href="https://www.getshifter.io/">
            <Img
             fixed={data.shifter.childImageSharp.fixed}
-            className="ml-5"
+            className="ml-5 opacity-70"
             alt=""
           />
           </a>
           <a href="https://www.phillytapfinder.com/">
           <Img
             fixed={data.ptf.childImageSharp.fixed}
-            className="ml-5"
+            className="ml-5 opacity-70"
             alt=""
           />
           </a>
