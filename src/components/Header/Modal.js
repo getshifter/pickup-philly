@@ -22,7 +22,7 @@ const InfoModal = props => {
       }
       ptf: file(relativePath: { eq: "PTF_logo.png" }) {
         childImageSharp {
-          fixed(width: 50) {
+          fixed(width: 30) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -36,7 +36,7 @@ const InfoModal = props => {
       }
       shifter: file(relativePath: { eq: "shifter_logo.png" }) {
          childImageSharp {
-           fixed(width: 100) {
+           fixed(width: 75) {
               ...GatsbyImageSharpFixed
 }
 }
@@ -62,39 +62,11 @@ const InfoModal = props => {
             alt=""
           />
         </ModalHeader>
-        <ModalBody className="px-sm-5 px-xs-0 pb-5 text-light">
-          <p className="display-2">
+        <ModalBody className="px-sm-5 px-xs-0 pb-5 text-light display-2">
           Pickup Philly is an open source business directory to help connect
           essential services with their customers during the coronavirus
           outbreak, including information on how to shop, modified hours of
           operation, and more.
-          </p>
-          <p className="small mb-0 ">
-            Proudly Sponsored by
-          </p>
-          <div>
-          <a href="https://www.phillytapfinder.com/">
-          <Img
-            fixed={data.ptf.childImageSharp.fixed}
-            className="mt-4 align-text-bottom"
-            alt=""
-          />
-          </a>
-          <a href="https://phillylovesbeer.org/">
-           <Img
-            fixed={data.plb.childImageSharp.fixed}
-            className="mt-4 ml-4 align-text-middle"
-            alt=""
-          />
-          </a>
-          <a href="https://www.getshifter.io/">
-           <Img
-            fixed={data.shifter.childImageSharp.fixed}
-            className="mt-4 ml-4 align-text-middle"
-            alt=""
-          />
-          </a>
-          </div>
         </ModalBody>
         <ModalFooter className="pt-5 mb-4 justify-content-between display-3 align-items-start">
           <div>
@@ -119,6 +91,31 @@ const InfoModal = props => {
             <a className="text-white" href="https://twitter.com/pickupphilly">
               <Twitter size="2rem" />
             </a>
+          </div>
+          <div>
+          <span className="small text-light">Proudly Sponsored by</span>
+
+          <a href="https://phillylovesbeer.org/">
+           <Img
+            fixed={data.plb.childImageSharp.fixed}
+            className="mt-4 ml-4 align-text-middle"
+            alt=""
+          />
+          </a>
+          <a href="https://www.phillytapfinder.com/">
+          <Img
+            fixed={data.ptf.childImageSharp.fixed}
+            className="mt-4 ml-4 align-text-bottom"
+            alt=""
+          />
+          </a>
+          <a href="https://www.getshifter.io/">
+           <Img
+            fixed={data.shifter.childImageSharp.fixed}
+            className="mt-4 ml-4 align-text-middle"
+            alt=""
+          />
+          </a>
           </div>
         </ModalFooter>
       </Modal>
