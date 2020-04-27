@@ -22,7 +22,7 @@ const InfoModal = props => {
       }
       ptf: file(relativePath: { eq: "PTF_logo.png" }) {
         childImageSharp {
-          fixed(width: 30) {
+          fixed(width: 50) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -36,7 +36,7 @@ const InfoModal = props => {
       }
       shifter: file(relativePath: { eq: "shifter_logo.png" }) {
          childImageSharp {
-           fixed(width: 75) {
+           fixed(width: 100) {
               ...GatsbyImageSharpFixed
 }
 }
