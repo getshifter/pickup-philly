@@ -20,7 +20,29 @@ const InfoModal = props => {
           }
         }
       }
-    }
+      ptf: file(relativePath: { eq: "PTF_logo.png" }) {
+        childImageSharp {
+          fixed(width: 50) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      plb: file(relativePath: { eq: "PLB_logo.png" }) {
+        childImageSharp {
+          fixed(width: 175) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      shifter: file(relativePath: { eq: "shifter_logo.png" }) {
+         childImageSharp {
+           fixed(width: 100) {
+              ...GatsbyImageSharpFixed
+}
+}
+}
+}
+
   `)
 
   return (
@@ -40,11 +62,31 @@ const InfoModal = props => {
             alt=""
           />
         </ModalHeader>
-        <ModalBody className="display-2 px-sm-5 px-xs-0 pb-5 text-light">
+        <ModalBody className="px-sm-5 px-xs-0 pb-5 text-light">
+          <p className="display-2">
           Pickup Philly is an open source business directory to help connect
           essential services with their customers during the coronavirus
           outbreak, including information on how to shop, modified hours of
           operation, and more.
+          </p>
+          <p className="small">
+            Proudly Sponsored by
+          </p>
+          <Img
+            fixed={data.ptf.childImageSharp.fixed}
+            className="mt-4 ml-4"
+            alt=""
+          />
+           <Img
+            fixed={data.plb.childImageSharp.fixed}
+            className="mt-4 ml-4"
+            alt=""
+          />
+           <Img
+            fixed={data.shifter.childImageSharp.fixed}
+            className="mt-4 ml-4"
+            alt=""
+          />
         </ModalBody>
         <ModalFooter className="pt-5 mb-4 justify-content-between display-3 align-items-start">
           <div>
