@@ -62,13 +62,13 @@ const InfoModal = props => {
             alt=""
           />
         </ModalHeader>
-        <ModalBody className="px-sm-5 px-xs-0 pb-5 text-light display-2">
+        <ModalBody className="px-sm-5 px-xs-0 pb-5 text-light display-4 display-sm-2">
           Pickup Philly is an open source business directory to help connect
           essential services with their customers during the coronavirus
           outbreak, including information on how to shop, modified hours of
           operation, and more.
         </ModalBody>
-        <ModalFooter className="pt-5 justify-content-between display-3 align-items-start">
+        <ModalFooter className="pt-5 justify-content-between display-3 align-items-start text-sm-left">
           <div>
             <div>
               <a
@@ -94,27 +94,27 @@ const InfoModal = props => {
           </div>
   
         </ModalFooter>
-        <div className="modal__sponsorlogos display-4 border-top border-light w-100 d-block d-sm-flex justify-content-between align-items-start">
+        <div className="modal__sponsorlogos display-4 border-top border-light w-100 d-block d-sm-flex justify-content-between align-items-start text-center ">
           <div className="small text-light mt-2">Proudly Sponsored by:</div>
           <div>
           <a href="https://phillylovesbeer.org/">
            <Img
             fixed={data.plb.childImageSharp.fixed}
             alt=""
-            className="opacity-70 mt-sm-0 mt-2 text-center"
+            className="opacity-70 mt-sm-0 mt-4"
           />
           </a>
           <a href="https://www.getshifter.io/">
            <Img
             fixed={data.shifter.childImageSharp.fixed}
-            className="ml-sm-5 opacity-70 mt-sm-0 mt-2 text-center"
+            className="ml-sm-5 opacity-70 mt-sm-0 mt-4"
             alt=""
           />
           </a>
           <a href="https://www.phillytapfinder.com/">
           <Img
             fixed={data.ptf.childImageSharp.fixed}
-            className="ml-5 mt-sm-0 mr-0 opacity-70 mt-2 text-center"
+            className="ml-5 mt-sm-0 mr-0 opacity-70 mt-sm-0 mt-4 "
             alt=""
           />
           </a>
