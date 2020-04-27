@@ -114,7 +114,7 @@ const InfoModal = props => {
           <a href="https://www.phillytapfinder.com/">
           <Img
             fixed={data.ptf.childImageSharp.fixed}
-            className="ml-5 opacity-70"
+            className="ml-5 mr-0 opacity-70"
             alt=""
           />
           </a>
