@@ -68,7 +68,7 @@ const InfoModal = props => {
           outbreak, including information on how to shop, modified hours of
           operation, and more.
         </ModalBody>
-        <ModalFooter className="pt-5 mb-4 justify-content-between display-3 align-items-start">
+        <ModalFooter className="pt-5 justify-content-between display-3 align-items-start">
           <div>
             <div>
               <a
