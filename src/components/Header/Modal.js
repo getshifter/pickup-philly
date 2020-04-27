@@ -94,8 +94,9 @@ const InfoModal = props => {
           </div>
   
         </ModalFooter>
-        <div className="display-4 border-top border-light w-100 p-5 d-flex justify-content-between align-items-start">
-          <span className="small text-light mt-2">Proudly Sponsored by:</span>
+        <div className="modal__sponsorlogos display-4 border-top border-light w-100 d-flex justify-content-between align-items-start">
+          <div className="small text-light mt-2">Proudly Sponsored by:</div>
+          <div>
           <a href="https://phillylovesbeer.org/">
            <Img
             fixed={data.plb.childImageSharp.fixed}
@@ -117,6 +118,7 @@ const InfoModal = props => {
             alt=""
           />
           </a>
+          </div>
           </div>
       </Modal>
     </div>
