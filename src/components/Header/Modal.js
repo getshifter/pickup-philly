@@ -22,7 +22,7 @@ const InfoModal = props => {
       }
       ptf: file(relativePath: { eq: "PTF_logo.png" }) {
         childImageSharp {
-          fixed(width: 50) {
+          fixed(width: 40) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -111,7 +111,7 @@ const InfoModal = props => {
             alt=""
           />
           </a>
-                    <a href="https://www.phillytapfinder.com/">
+          <a href="https://www.phillytapfinder.com/">
           <Img
             fixed={data.ptf.childImageSharp.fixed}
             className="ml-5"
