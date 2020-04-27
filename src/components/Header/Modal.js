@@ -69,13 +69,13 @@ const InfoModal = props => {
           outbreak, including information on how to shop, modified hours of
           operation, and more.
           </p>
-          <p className="small">
+          <p className="small mb-0">
             Proudly Sponsored by
           </p>
           <a href="https://www.phillytapfinder.com/">
           <Img
             fixed={data.ptf.childImageSharp.fixed}
-            className="mt-4 ml-4"
+            className="mt-4"
             alt=""
           />
           </a>
