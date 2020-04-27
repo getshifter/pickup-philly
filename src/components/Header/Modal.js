@@ -94,7 +94,7 @@ const InfoModal = props => {
           </div>
   
         </ModalFooter>
-        <div className="modal__sponsorlogos display-4 border-top border-light w-100 d-block d-sm-flex justify-content-between align-items-start text-center ">
+        <div className="modal__sponsorlogos display-4 border-top border-light w-100 d-block d-sm-flex justify-content-between align-items-start ">
           <div className="small text-light mt-2">Proudly Sponsored by:</div>
           <div>
           <a href="https://phillylovesbeer.org/">
