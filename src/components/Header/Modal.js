@@ -92,8 +92,8 @@ const InfoModal = props => {
               <Twitter size="2rem" />
             </a>
           </div>
-          <div>
-          <span className="small text-light">Proudly Sponsored by</span>
+          <div className="display-4">
+          <span className="small text-light ">Proudly Sponsored by</span>
 
           <a href="https://phillylovesbeer.org/">
            <Img
