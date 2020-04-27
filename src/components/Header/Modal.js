@@ -69,30 +69,32 @@ const InfoModal = props => {
           outbreak, including information on how to shop, modified hours of
           operation, and more.
           </p>
-          <p className="small mb-0">
+          <p className="small mb-0 ">
             Proudly Sponsored by
           </p>
+          <div>
           <a href="https://www.phillytapfinder.com/">
           <Img
             fixed={data.ptf.childImageSharp.fixed}
-            className="mt-4"
+            className="mt-4 align-text-bottom"
             alt=""
           />
           </a>
           <a href="https://phillylovesbeer.org/">
            <Img
             fixed={data.plb.childImageSharp.fixed}
-            className="mt-4 ml-4"
+            className="mt-4 ml-4 align-text-middle"
             alt=""
           />
           </a>
           <a href="https://www.getshifter.io/">
            <Img
             fixed={data.shifter.childImageSharp.fixed}
-            className="mt-4 ml-4"
+            className="mt-4 ml-4 align-text-middle"
             alt=""
           />
           </a>
+          </div>
         </ModalBody>
         <ModalFooter className="pt-5 mb-4 justify-content-between display-3 align-items-start">
           <div>
