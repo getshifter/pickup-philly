@@ -95,30 +95,28 @@ const InfoModal = props => {
   
         </ModalFooter>
         <div className="display-4 border-top border-light w-100 p-5 d-flex justify-content-between align-items-start">
-          <div className="small text-light mt-2">Proudly Sponsored by:</div>
-          <div>
+          <span className="small text-light mt-2">Proudly Sponsored by:</span>
           <a href="https://phillylovesbeer.org/">
            <Img
             fixed={data.plb.childImageSharp.fixed}
             alt=""
-            className="opacity-70"
+            className="opacity-70 mt-sm-0 mt-2 text-center"
           />
           </a>
           <a href="https://www.getshifter.io/">
            <Img
             fixed={data.shifter.childImageSharp.fixed}
-            className="ml-5 opacity-70"
+            className="ml-sm-5 opacity-70 mt-sm-0 mt-2 text-center"
             alt=""
           />
           </a>
           <a href="https://www.phillytapfinder.com/">
           <Img
             fixed={data.ptf.childImageSharp.fixed}
-            className="ml-5 mr-0 opacity-70"
+            className="ml-5 mt-sm-0 mr-0 opacity-70 mt-2 text-center"
             alt=""
           />
           </a>
-          </div>
           </div>
       </Modal>
     </div>
