@@ -15,7 +15,7 @@ const InfoModal = props => {
     query {
       logo: file(relativePath: { eq: "pickpuphilly-logo-light.png" }) {
         childImageSharp {
-          fixed(width: 300) {
+          fixed(width: 200) {
             ...GatsbyImageSharpFixed
           }
         }
