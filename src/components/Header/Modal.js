@@ -92,9 +92,11 @@ const InfoModal = props => {
               <Twitter size="2rem" />
             </a>
           </div>
-          <div className="display-4">
-          <span className="small text-light ">Proudly Sponsored by</span>
-
+  
+        </ModalFooter>
+        <div className="display-4 border-top border-light justify-content-between w-100 px-4 pb-4">
+          <div className="small text-light ">Proudly Sponsored by</div>
+          <div>
           <a href="https://phillylovesbeer.org/">
            <Img
             fixed={data.plb.childImageSharp.fixed}
@@ -112,12 +114,12 @@ const InfoModal = props => {
           <a href="https://www.getshifter.io/">
            <Img
             fixed={data.shifter.childImageSharp.fixed}
-            className="mt-4 ml-4 align-text-middle"
+            className="mt-4 ml-5 align-text-middle"
             alt=""
           />
           </a>
           </div>
-        </ModalFooter>
+          </div>
       </Modal>
     </div>
   )
