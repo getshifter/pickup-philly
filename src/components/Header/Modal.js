@@ -94,27 +94,27 @@ const InfoModal = props => {
           </div>
   
         </ModalFooter>
-        <div className="display-4 border-top border-light justify-content-between w-100 px-4 pb-4">
+        <div className="display-4 border-top border-light w-100 p-4 d-flex justify-content-between align-items-start">
           <div className="small text-light ">Proudly Sponsored by</div>
           <div>
           <a href="https://phillylovesbeer.org/">
            <Img
             fixed={data.plb.childImageSharp.fixed}
-            className="mt-4 ml-4 align-text-middle"
+            className="ml-4 align-text-middle"
             alt=""
           />
           </a>
           <a href="https://www.phillytapfinder.com/">
           <Img
             fixed={data.ptf.childImageSharp.fixed}
-            className="mt-4 ml-4 align-text-bottom"
+            className="ml-4 align-text-bottom"
             alt=""
           />
           </a>
           <a href="https://www.getshifter.io/">
            <Img
             fixed={data.shifter.childImageSharp.fixed}
-            className="mt-4 ml-5 align-text-middle"
+            className="ml-5 align-text-middle"
             alt=""
           />
           </a>
