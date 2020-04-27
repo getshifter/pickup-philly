@@ -80,11 +80,11 @@ body {
 //Responsive Type
 
 @include media-breakpoint-down(sm) {
-  .display-2 {
-    font-size: 1.2rem;
+  .modal__body {
+    font-size: 1.25rem;
   }
-  .display-3 {
-    font-size: 1.2rem;
+  .modal__footer {
+    font-size: 1.25rem;
   }
 }
 
