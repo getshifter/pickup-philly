@@ -16,7 +16,7 @@ function Seo({ description, lang, meta, keywords, title }) {
               lang,
             }}
             title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+            titleTemplate={`${data.site.siteMetadata.title}`}
             meta={[
               {
                 name: `description`,
@@ -35,8 +35,16 @@ function Seo({ description, lang, meta, keywords, title }) {
                 content: `website`,
               },
               {
+                property: "og:image",
+                content: data.site.siteMetadata.siteUrl + data.site.siteMetadata.shareImage,
+              },
+              {
                 name: `twitter:card`,
-                content: `summary`,
+                content: "summary_large_image",
+              },
+              {
+                name: "twitter:image",
+                content: data.site.siteMetadata.siteUrl + data.site.siteMetadata.shareImage,
               },
               {
                 name: `twitter:creator`,
@@ -90,6 +98,8 @@ const detailsQuery = graphql`
         title
         description
         author
+        siteUrl
+        shareImage
       }
     }
   }

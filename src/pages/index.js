@@ -5,9 +5,10 @@ import Search from "../components/search"
 
 const IndexPage = ({ location }) => {
   return (
-    <Layout location={{ location }} primaryContent={<Search />}>
+    <>
       <Seo title="Pickup Philly" />
-    </Layout>
+      <Layout location={{ location }} primaryContent={<Search />} />
+    </>
   )
 }
 

@@ -20,13 +20,13 @@ module.exports = { config }
 module.exports = {
   siteMetadata: {
     title: "Pickup Philly",
-    description: "",
+    description:
+      "Pickup Philly is an open source business directory to help connect essential services with their customers during the coronavirus outbreak, including information on how to shop, modified hours of operation, and more.",
     author: "@pickupphilly",
     siteUrl: "https://www.pickupphilly.com",
     wordPressUrl: config.wordPressUrl,
     wordPressGraphQlUrl: config.wordPressGraphQlUrl,
-    twitterImage: "/twitter-image.png",
-    ogImage: "/og-image.png",
+    shareImage: "/share-image.png",
   },
   plugins: [
     {
@@ -93,6 +93,12 @@ module.exports = {
         indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
         queries,
         chunkSize: 10000, // default: 1000
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-164971508-1",
       },
     },
   ],

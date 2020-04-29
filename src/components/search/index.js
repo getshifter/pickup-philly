@@ -61,9 +61,10 @@ class Search extends Component {
       <div className="d-flex flex-wrap align-items-center justify-content-center pb-4">
         {items.map(item => (
           <Button
+            key={item.value}
             className="m-2"
             size="sm"
-            pill
+            pill="true"
             color={item.isRefined ? "primary" : "outline-primary"}
             onClick={event => {
               event.preventDefault()
