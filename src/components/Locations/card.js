@@ -47,7 +47,7 @@ const LocationCard = props => {
               {renderCategories(categories.nodes)}
             </div>
             </Col>
-            <Col>
+            <Col sm="4" className="text-right">
             <Row>
               {renderWebsite(website)}
               </Row>
