@@ -23,7 +23,7 @@ class Search extends Component {
   render() {
     const SearchBox = ({ currentRefinement, refine }) => {
       return (
-        <Form noValidate action="" role="search" className="mb-3">
+        <Form noValidate action="" role="search" className="my-4">
           <Input
             type="search"
             value={currentRefinement}
