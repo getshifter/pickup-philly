@@ -9,16 +9,14 @@ const renderFulfillmentNodes = (nodes, title) => {
 }
 
 export const renderFulfillment = (fulfillmentNodes = [], title = "") => (
-  <Col className="pl-0">
-    <section>
-      {renderMetaTitle("Fulfillment")}
+    <div>
+     Fulfillment
       {fulfillmentNodes ? (
-        <div className="font-weight-bold">
+        <span className="font-weight-bold">
           {renderFulfillmentNodes(fulfillmentNodes)}
-        </div>
+        </span>
       ) : (
         renderReportInfo(title)
       )}
-    </section>
-  </Col>
+    </div>
 )
