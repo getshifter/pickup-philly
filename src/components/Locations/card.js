@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import PhoneNumber from "awesome-phonenumber"
-import { Card, CardBody, UncontrolledCollapse, Button, Row } from "reactstrap"
+import { Card, CardBody, UncontrolledCollapse, Button, Row, Col } from "reactstrap"
 import { renderCategories } from "./categories"
 import { renderIcon } from "./icon"
 import { renderOrdering } from "./ordering"
@@ -37,6 +37,8 @@ const LocationCard = props => {
       <Card className="mb-3">
         <CardBody className="p-0">
           <div className="p-4">
+            <Row>
+              <Col>
             <h2
               className="display-3"
               dangerouslySetInnerHTML={{ __html: title }}
@@ -44,10 +46,17 @@ const LocationCard = props => {
             <div className="mt-3 mb-4">
               {renderCategories(categories.nodes)}
             </div>
-            <Row className="d-flex justify-content-between mb-4">
+            </Col>
+            <Col>
+            <Row>
               {renderWebsite(website)}
+              </Row>
+              <Row>
               {renderPhone(telephone)}
             </Row>
+            </Col>
+            </Row>
+
             <Row>
               {renderFulfillment(fulfillmentOptions, title)}
               {renderOrdering(orderingOptions, title)}
