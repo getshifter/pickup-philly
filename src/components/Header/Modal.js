@@ -35,14 +35,13 @@ const InfoModal = props => {
         }
       }
       shifter: file(relativePath: { eq: "shifter_logo.png" }) {
-         childImageSharp {
-           fixed(width: 100) {
-              ...GatsbyImageSharpFixed
-}
-}
-}
-}
-
+        childImageSharp {
+          fixed(width: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
   `)
 
   return (
@@ -88,38 +87,40 @@ const InfoModal = props => {
             </div>
           </div>
           <div className="text-left text-sm-right mt-3 mt-sm-0">
-            <a className="text-white mt-sm-0" href="https://twitter.com/pickupphilly">
+            <a
+              className="text-white mt-sm-0"
+              href="https://twitter.com/pickupphilly"
+            >
               <Twitter size="2rem" />
             </a>
           </div>
-  
         </ModalFooter>
         <div className="modal__sponsorlogos display-4 border-top border-light w-100 d-block d-sm-flex justify-content-between align-items-start ">
           <div className="small text-light mt-2">Proudly Sponsored by:</div>
           <div>
-          <a href="https://phillylovesbeer.org/">
-           <Img
-            fixed={data.plb.childImageSharp.fixed}
-            alt=""
-            className="opacity-70 mt-sm-0 mt-4"
-          />
-          </a>
-          <a href="https://www.getshifter.io/">
-           <Img
-            fixed={data.shifter.childImageSharp.fixed}
-            className="ml-sm-5 opacity-70 mt-sm-0 mt-4"
-            alt=""
-          />
-          </a>
-          <a href="https://www.phillytapfinder.com/">
-          <Img
-            fixed={data.ptf.childImageSharp.fixed}
-            className="ml-5 mt-sm-0 mr-0 opacity-70 mt-sm-0 mt-4 "
-            alt=""
-          />
-          </a>
+            <a href="https://www.getshifter.io/">
+              <Img
+                fixed={data.shifter.childImageSharp.fixed}
+                className="opacity-70 mt-sm-0 mt-4"
+                alt=""
+              />
+            </a>
+            <a href="https://phillylovesbeer.org/">
+              <Img
+                fixed={data.plb.childImageSharp.fixed}
+                alt=""
+                className="ml-sm-5 opacity-70 mt-sm-0 mt-4"
+              />
+            </a>
+            <a href="https://www.phillytapfinder.com/">
+              <Img
+                fixed={data.ptf.childImageSharp.fixed}
+                className="ml-5 mt-sm-0 mr-0 opacity-70 mt-sm-0 mt-4 "
+                alt=""
+              />
+            </a>
           </div>
-          </div>
+        </div>
       </Modal>
     </div>
   )

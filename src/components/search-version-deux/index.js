@@ -15,6 +15,7 @@ import {
 import PropTypes from "prop-types"
 import React, { Fragment } from "react"
 import { Input, Button, Form, Row, Col } from "reactstrap"
+import Header from "../Header/Header"
 import withURLSync from "./URLSync"
 import LocationCard from "../Locations/card"
 
@@ -38,7 +39,7 @@ const SearchBox = ({ currentRefinement, refine }) => {
 
 const CustomSearchBox = connectSearchBox(SearchBox)
 
-function Header() {
+function SearchInput() {
   return <CustomSearchBox />
 }
 
@@ -336,6 +337,7 @@ const SearchVersionDeux = props => (
         <div className="list-wrapper">
           <div className="list-container p-4">
             <Header />
+            <SearchInput />
             <Filters />
             <Results />
           </div>
