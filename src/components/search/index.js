@@ -62,7 +62,7 @@ class Search extends Component {
         {items.map(item => (
           <Button
             key={item.value}
-            className="m-2"
+            className="my-2 mx-1"
             size="sm"
             pill="true"
             color={item.isRefined ? "primary" : "outline-primary"}
