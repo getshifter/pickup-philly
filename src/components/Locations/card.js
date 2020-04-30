@@ -43,7 +43,7 @@ const LocationCard = props => {
               className="display-3"
               dangerouslySetInnerHTML={{ __html: title }}
             />
-            <div className="mt-3 mb-4">
+            <div className="mt-2 mb-4">
               {renderCategories(categories.nodes)}
             </div>
             </Col>
