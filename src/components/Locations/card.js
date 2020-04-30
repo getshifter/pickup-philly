@@ -47,11 +47,11 @@ const LocationCard = props => {
               {renderCategories(categories.nodes)}
             </div>
             </Col>
-            <Col sm="4" className="text-right">
+            <Col sm="4" className="text-left text-sm-right">
             <Row>
               {renderWebsite(website)}
               </Row>
-              <Row>
+              <Row className="mb-4">
               {renderPhone(telephone)}
             </Row>
             </Col>
