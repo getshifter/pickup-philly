@@ -51,7 +51,7 @@ const LocationCard = props => {
             <Row>
               {renderWebsite(website)}
               </Row>
-              <Row className="mb-4">
+              <Row className="mb-4 mb-sm-0">
               {renderPhone(telephone)}
             </Row>
             </Col>

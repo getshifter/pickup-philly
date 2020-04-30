@@ -10,7 +10,7 @@ const renderFulfillmentNodes = (nodes, title) => {
 
 export const renderFulfillment = (fulfillmentNodes = [], title = "") => (
     <div>
-      <span className="small mr-1">Fulfillment:</span>
+      <span className="small mr-1">Fulfillment:</span><br className="hidden-sm"/>
       {fulfillmentNodes ? (
         <span className="font-weight-bold">
           {renderFulfillmentNodes(fulfillmentNodes)}

@@ -6,7 +6,7 @@ const renderOrderingNodes = (nodes, title) => (
   <>
     {nodes.length > 0 ? (
       <div>
-        <span className="small">Order by:</span>
+        <span className="small">Order by:</span><br className="hidden-sm"/>
         {nodes.map((option, i) => {
           return (
             <span key={i} className={`pl-2 text-green`}>
