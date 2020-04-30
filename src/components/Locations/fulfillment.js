@@ -1,8 +1,8 @@
 import React from "react"
 import { commaList } from "./comma-list"
-import { renderMetaTitle } from "./title"
+// import { renderMetaTitle } from "./title"
 import { renderReportInfo } from "./report-info"
-import { Col } from "reactstrap"
+// import { Col } from "reactstrap"
 
 const renderFulfillmentNodes = (nodes, title) => {
   return commaList(nodes)
@@ -10,7 +10,7 @@ const renderFulfillmentNodes = (nodes, title) => {
 
 export const renderFulfillment = (fulfillmentNodes = [], title = "") => (
     <div>
-     Fulfillment
+      <span className="small mr-1">Fulfillment:</span>
       {fulfillmentNodes ? (
         <span className="font-weight-bold">
           {renderFulfillmentNodes(fulfillmentNodes)}
