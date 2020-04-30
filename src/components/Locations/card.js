@@ -56,10 +56,13 @@ const LocationCard = props => {
             </Row>
             </Col>
             </Row>
-
             <Row>
+            <Col>
               {renderFulfillment(fulfillmentOptions, title)}
+              </Col>
+              <Col>
               {renderOrdering(orderingOptions, title)}
+            </Col>
             </Row>
           </div>
           <div className="text-right border-top">
