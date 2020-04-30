@@ -23,7 +23,7 @@ class Search extends Component {
   render() {
     const SearchBox = ({ currentRefinement, refine }) => {
       return (
-        <Form noValidate action="" role="search" className="mb-3">
+        <Form noValidate action="" role="search" className="my-4">
           <Input
             type="search"
             value={currentRefinement}
@@ -62,7 +62,7 @@ class Search extends Component {
         {items.map(item => (
           <Button
             key={item.value}
-            className="m-2"
+            className="my-2 mx-1"
             size="sm"
             pill="true"
             color={item.isRefined ? "primary" : "outline-primary"}

@@ -1,24 +1,22 @@
 import React from "react"
 import { commaList } from "./comma-list"
-import { renderMetaTitle } from "./title"
+// import { renderMetaTitle } from "./title"
 import { renderReportInfo } from "./report-info"
-import { Col } from "reactstrap"
+// import { Col } from "reactstrap"
 
 const renderFulfillmentNodes = (nodes, title) => {
   return commaList(nodes)
 }
 
 export const renderFulfillment = (fulfillmentNodes = [], title = "") => (
-  <Col>
-    <section>
-      {renderMetaTitle("Fulfillment")}
+    <div>
+      <span className="small mr-1">Fulfillment:</span><br className="hidden-sm"/>
       {fulfillmentNodes ? (
-        <div className="font-weight-bold">
+        <span className="font-weight-bold">
           {renderFulfillmentNodes(fulfillmentNodes)}
-        </div>
+        </span>
       ) : (
         renderReportInfo(title)
       )}
-    </section>
-  </Col>
+    </div>
 )

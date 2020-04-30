@@ -11,7 +11,7 @@ const Index = ({ location }) => (
       query SiteTitleQuery {
         logo: file(relativePath: { eq: "logo.png" }) {
           childImageSharp {
-            fixed(width: 175) {
+            fixed(width: 125) {
               ...GatsbyImageSharpFixed_noBase64
             }
           }
