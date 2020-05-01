@@ -10,7 +10,7 @@ import {
 import {
   GoogleMapsLoader,
   GeoSearch,
-  Marker,
+  CustomMarker,
 } from "react-instantsearch-dom-maps"
 import PropTypes from "prop-types"
 import React, { Fragment } from "react"
@@ -18,6 +18,7 @@ import { Input, Button, Form, Row, Col } from "reactstrap"
 import Header from "../Header/Header"
 import withURLSync from "./URLSync"
 import LocationCard from "../Locations/card"
+import{ Lens } from "@styled-icons/material-twotone/Lens"
 
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
@@ -222,7 +223,7 @@ const LocationsMap = () => (
         {({ hits }) => (
           <Fragment>
             {hits.map(hit => (
-              <Marker key={hit.objectID} hit={hit} />
+              <CustomMarker key={hit.objectID} hit={hit} ><Lens size="1.5rem" color="#00a18a"/> </CustomMarker>
             ))}
             <ClearRefinements
               className="ClearGeoRefinement"
