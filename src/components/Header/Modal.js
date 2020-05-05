@@ -68,7 +68,7 @@ const InfoModal = props => {
           outbreak, including information on how to shop, modified hours of
           operation, and more.
         </ModalBody>
-        <ModalFooter className="modal__footer display-3 pt-5 d-block d-sm-flex justify-content-between align-items-start text-sm-left">
+        <ModalFooter className="modal__footer display-3 py-5 d-block d-sm-flex justify-content-between align-items-start text-sm-left">
           <div>
             <div>
               <a
